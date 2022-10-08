@@ -1,4 +1,5 @@
 import Image from "next/image";
+import logo from "../public/alt.png";
 
 const App = () => {
   const footerNavs = [
@@ -25,22 +26,17 @@ const App = () => {
 
     {
       href: "javascript:void()",
-      name: "Suuport",
+      name: "Support",
     },
   ];
 
   return (
     <footer className="text-gray-500 bg-white px-4 py-5 max-w-screen-xl mx-auto container w-full">
-      <div className="max-w-lg sm:mx-auto sm:text-center">
-        {/* <div className="relative w-60 h-60">
-          <Image
-            src="https://www.floatui.com/logo.svg"
-            className="w-32 sm:mx-auto"
-            alt="image"
-            layout="fill"
-          />
-        </div> */}
-        <p className="leading-relaxed mt-2 text-[15px]">
+      <div className="py-20 max-w-lg sm:mx-auto sm:text-center">
+        <div className="relative w-32 h-32 container mx-auto">
+          <Image src={logo} width={60} height={60} alt="image" layout="fill" />
+        </div>
+        <p className="leading-relaxed mt-2 text-[15px] text-center">
           Alternatively, a better fitting option.
         </p>
       </div>

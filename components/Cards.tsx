@@ -44,9 +44,6 @@ export default function App() {
         <h1 className="text-3xl text-gray-800 font-semibold">
           Latest <span className="text-indigo-600"> Alternatives</span>
         </h1>
-        <p className="mt-3 text-gray-500">
-          Alternatives that are loved by the community. Updated daily.
-        </p>
       </div>
       <div className="mt-12 grid gap-2 sm:grid-cols-2 lg:grid-cols-3">
         {posts.map((items, key) => (
