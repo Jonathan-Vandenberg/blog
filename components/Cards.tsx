@@ -41,9 +41,11 @@ export default function App() {
   return (
     <section className="mt-12 mx-auto px-4 max-w-screen-xl lg:px-8">
       <div className="text-center">
-        <h1 className="text-3xl text-gray-800 font-semibold">Blog</h1>
+        <h1 className="text-3xl text-gray-800 font-semibold">
+          Latest <span className="text-indigo-600"> Alternatives</span>
+        </h1>
         <p className="mt-3 text-gray-500">
-          Blogs that are loved by the community. Updated every hour.
+          Alternatives that are loved by the community. Updated daily.
         </p>
       </div>
       <div className="mt-12 grid gap-2 sm:grid-cols-2 lg:grid-cols-3">
