@@ -37,7 +37,7 @@ const App = () => {
           <Image src={logo} width={60} height={60} alt="image" layout="fill" />
         </div>
         <p className="leading-relaxed mt-2 text-[15px] text-center">
-          Alternatively, a better fitting option.
+          Alternatively, a better option.
         </p>
       </div>
       <ul className="items-center justify-center mt-8 space-y-5 sm:flex sm:space-x-4 sm:space-y-0">
