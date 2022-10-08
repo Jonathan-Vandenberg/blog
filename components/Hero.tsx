@@ -88,7 +88,7 @@ export default function App() {
         <div className="text-center space-y-4">
           <h1 className="text-gray-800 font-bold text-4xl md:text-5xl">
             Optimize your website for
-            <span className="text-indigo-600"> Search engine</span>
+            <span className="text-indigo-600">Search engine</span>
           </h1>
           <p className="text-gray-500 max-w-xl mx-auto leading-relaxed">
             It is a long established fact that a reader will be distracted by
