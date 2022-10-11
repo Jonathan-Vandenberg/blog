@@ -2,7 +2,7 @@ export default function App({ blogCard }: { blogCard: boolean }) {
   const posts = [
     {
       title: "Work",
-      desc: "Going into this journey, I had a standard therapy regimen, based on looking at the research literature. After I saw the movie, I started to ask other people what they did for their anxiety, and some",
+      desc: "A change of career could be the biggest positive effect you could have on your life, let's look at some alternative job opportunities",
       img: "https://images.unsplash.com/photo-1556155092-490a1ba16284?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=870&q=80",
       authorLogo: "https://api.uifaces.co/our-content/donated/xZ4wg2Xj.jpg",
       authorName: "Sidi dev",
@@ -11,7 +11,7 @@ export default function App({ blogCard }: { blogCard: boolean }) {
     },
     {
       title: "Self-improvement",
-      desc: "According to him, â€œI'm still surprised that this has happened. But we are surprised because we are so surprised.â€More revelations about Whittington will be featured in the film",
+      desc: "Self-improvement will be the key which unlocks the doors of opportunity.",
       img: "https://images.unsplash.com/photo-1620287341056-49a2f1ab2fdc?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=870&q=80",
       authorLogo: "https://api.uifaces.co/our-content/donated/FJkauyEa.jpg",
       authorName: "Micheal",
@@ -20,7 +20,7 @@ export default function App({ blogCard }: { blogCard: boolean }) {
     },
     {
       title: "Travel",
-      desc: "I hope I remembered all the stuff that they needed to know. They're like, 'okay,' and write it in their little reading notebooks. I realized today that I have all this stuff that",
+      desc: "Traveling opens new life perspectives and could be the big change which you need.",
       img: "https://images.unsplash.com/photo-1517694712202-14dd9538aa97?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=870&q=80",
       authorLogo: "https://randomuser.me/api/portraits/men/46.jpg",
       authorName: "Luis",
@@ -29,7 +29,7 @@ export default function App({ blogCard }: { blogCard: boolean }) {
     },
     {
       title: "Hobbies",
-      desc: "The powerful gravity waves resulting from the impact of the planets' moons â€” four in total â€” were finally resolved in 2015 when gravitational microlensing was used to observe the",
+      desc: "All work and no play leads to dull life, however, there are also ways to make your hobby into a passive income.",
       img: "https://images.unsplash.com/photo-1617529497471-9218633199c0?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=870&q=80",
       authorLogo: "https://api.uifaces.co/our-content/donated/KtCFjlD4.jpg",
       authorName: "Lourin",
