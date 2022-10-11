@@ -15,7 +15,7 @@ const Home: NextPage = () => {
       <div className="mt-24">
         <Hero />
       </div>
-      <Cards />
+      <Cards blogCard={false} />
     </div>
   );
 };
