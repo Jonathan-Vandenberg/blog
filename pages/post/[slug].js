@@ -16,16 +16,16 @@ const PostDetails = ({ post }) => {
   return (
     <>
       <Head>
-        {post.seo.title && <title>{post.seo.title}</title>}
+        {post?.seo?.title && <title>{post.seo.title}</title>}
         <meta name="viewport" content="initial-scale=1.0, width=device-width" />
-        {post.seo.description && (
+        {post?.seo?.description && (
           <meta name="description" content={post.seo.description}></meta>
         )}
 
-        {post.seo.title && (
+        {post?.seo?.title && (
           <meta property="og:title" content={post.seo.title} />
         )}
-        {post.seo.description && (
+        {post?.seo?.description && (
           <meta property="og:description" content={post.seo.description} />
         )}
         {post?.seo?.image?.seoImage?.image?.url && (
