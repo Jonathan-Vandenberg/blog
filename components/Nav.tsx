@@ -26,6 +26,7 @@ export default function App() {
             <button
               className="text-gray-700 outline-none p-2 rounded-md focus:border-gray-400 focus:border"
               onClick={() => setState(!state)}
+              aria-label="menu button"
             >
               {state ? (
                 <svg
