@@ -79,11 +79,11 @@ const PostDetails = ({ post }) => {
                   <p>{children}</p>
                 </blockquote>
               ),
-              img: ({ src, altText, height, width }) => (
+              img: ({ src, title, height, width }) => (
                 <div className="block max-w-[480px] h-auto mx-auto">
                   <Image
                     src={src}
-                    alt={altText}
+                    alt={title}
                     height={height}
                     width={width}
                     objectFit="responsive"
