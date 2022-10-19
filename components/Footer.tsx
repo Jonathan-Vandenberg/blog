@@ -13,7 +13,7 @@ const App = () => {
     },
     {
       href: "javascript:void()",
-      name: "",
+      name: "Categories",
     },
     {
       href: "javascript:void()",
