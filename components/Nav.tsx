@@ -76,13 +76,6 @@ export default function App() {
             })}
           </ul>
         </div>
-        <div className="hidden md:inline-block">
-          <Link href={"/login"}>
-            <a className="py-3 px-4 text-white bg-indigo-600 hover:bg-indigo-700 rounded-md shadow">
-              Login
-            </a>
-          </Link>
-        </div>
       </div>
     </nav>
   );
