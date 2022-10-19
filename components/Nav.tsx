@@ -17,11 +17,18 @@ export default function App() {
     <nav className="bg-white w-full border-b md:border-0 md:static">
       <div className="items-center px-4 max-w-screen-xl mx-auto md:flex md:px-8">
         <div className="flex items-center justify-between py-3 md:py-5 md:block">
-          <Link href={"/"}>
-            <a>
-              <Image src={logo} width={50} height={50} alt="Float UI logo" />
-            </a>
-          </Link>
+          <div className="w-16 h-16">
+            <Link href={"/"}>
+              <a>
+                <Image
+                  src={logo}
+                  width={300}
+                  height={300}
+                  alt="Float UI logo"
+                />
+              </a>
+            </Link>
+          </div>
           <div className="md:hidden">
             <button
               className="text-gray-700 outline-none p-2 rounded-md focus:border-gray-400 focus:border"
