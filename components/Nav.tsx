@@ -67,11 +67,13 @@ export default function App() {
           <ul className="justify-center items-center space-y-8 md:flex md:space-x-6 md:space-y-0">
             {navigation.map((item, idx) => {
               return (
-                <Link href={item.path} key={idx}>
-                  <a className="text-gray-600 hover:text-indigo-600">
-                    {item.title}
-                  </a>
-                </Link>
+                <li key={idx}>
+                  <Link href={item.path}>
+                    <a className="text-gray-600 hover:text-indigo-600">
+                      {item.title}
+                    </a>
+                  </Link>
+                </li>
               );
             })}
           </ul>
