@@ -19,7 +19,7 @@ export default function App() {
       <div className="items-center px-4 max-w-screen-xl mx-auto md:flex md:px-8">
         <div className="flex items-center justify-between py-3 md:py-5 md:block">
           <Link href={"/"}>
-            <a href="javascript:void(0)">
+            <a>
               <Image src={logo} width={50} height={50} alt="Float UI logo" />
             </a>
           </Link>
@@ -68,20 +68,23 @@ export default function App() {
           <ul className="justify-center items-center space-y-8 md:flex md:space-x-6 md:space-y-0">
             {navigation.map((item, idx) => {
               return (
-                <li key={idx} className="text-gray-600 hover:text-indigo-600">
-                  <a href={item.path}>{item.title}</a>
-                </li>
+                <Link
+                  href={item.path}
+                  key={idx}
+                  className="text-gray-600 hover:text-indigo-600"
+                >
+                  <a>{item.title}</a>
+                </Link>
               );
             })}
           </ul>
         </div>
         <div className="hidden md:inline-block">
-          <a
-            href="javascript:void(0)"
-            className="py-3 px-4 text-white bg-indigo-600 hover:bg-indigo-700 rounded-md shadow"
-          >
-            Login
-          </a>
+          <Link href={"/login"}>
+            <a className="py-3 px-4 text-white bg-indigo-600 hover:bg-indigo-700 rounded-md shadow">
+              Login
+            </a>
+          </Link>
         </div>
       </div>
     </nav>
