@@ -37,7 +37,7 @@ const PostDetails = ({ post }) => {
         <meta property="og:image:width" content="1200" />
         <meta property="og:image:height" content="630" />
       </Head>
-      <div className="container mx-auto px-10 mb-8 mt-32">
+      <div className="container mx-auto px-10 mb-8 mt-32 lg:max-w-[960px]">
         <div className="text-black">
           <RichText
             className="text-black"
@@ -80,7 +80,7 @@ const PostDetails = ({ post }) => {
                 </blockquote>
               ),
               img: ({ src, title, height, width }) => (
-                <div className="block max-w-[480px] h-auto mx-auto">
+                <div className="block max-w-[480px] h-auto mx-auto my-12">
                   <Image
                     src={src}
                     alt={title}
