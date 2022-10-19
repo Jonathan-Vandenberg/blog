@@ -1,6 +1,10 @@
+import Cards from "../components/Cards";
 import PostCard from "../components/PostCard";
 import { getPosts } from "../services";
 
+{
+  /* // <PostCard key={index} post={post.node} /> */
+}
 export default function Home({ posts }: any) {
   return (
     <>
@@ -9,7 +13,7 @@ export default function Home({ posts }: any) {
         <div className="grid grid-cols-1 lg:grid-cols-12 gap-12">
           <div className="lg:col-span-8 col-span-1">
             {posts.map((post: { node: any }, index: any) => (
-              <PostCard key={index} post={post.node} />
+              <Cards key={index} post={post.node} blogCard={true} />
             ))}
           </div>
           <div className="lg:col-span-4 col-span-1">
