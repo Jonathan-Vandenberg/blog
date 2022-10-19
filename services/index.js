@@ -69,6 +69,17 @@ export const getPostDetails = async (slug) => {
           raw
           markdown
         }
+        seo {
+          description
+          title
+          image {
+            seoImage {
+              image {
+                url
+              }
+            }
+          }
+        }
       }
     }
   `;

@@ -2,6 +2,7 @@ import { RichText } from "@graphcms/rich-text-react-renderer";
 import Image from "next/image";
 import React from "react";
 import { useRouter } from "next/router";
+import Head from "next/head";
 
 import { getPosts, getPostDetails } from "../../services";
 
@@ -13,64 +14,87 @@ const PostDetails = ({ post }) => {
   }
 
   return (
-    <div className="container mx-auto px-10 mb-8 mt-32">
-      <div className="text-black">{post.title}</div>
-      <div className="text-black">
-        <RichText
-          className="text-black"
-          content={post.content.raw.children}
-          renderers={{
-            h1: ({ children }) => (
-              <h1 className="text-gray-700 text-3xl font-semibold py-6">
-                {children}
-              </h1>
-            ),
-            h2: ({ children }) => (
-              <h2 className="py-4 text-gray-700 font-semibold text-2xl">
-                {children}
-              </h2>
-            ),
-            h3: ({ children }) => (
-              <h3 className="py-3 text-gray-700 font-semibold text-xl">
-                {children}
-              </h3>
-            ),
-            bold: ({ children }) => (
-              <strong className="text-xl">{children}</strong>
-            ),
-            ol: ({ children }) => (
-              <ol className="py-3 text-gray-800 list-decimal text-xl">
-                {children}
-              </ol>
-            ),
-            ul: ({ children }) => (
-              <ul className="py-3 text-gray-800 list-disc text-xl">
-                {children}
-              </ul>
-            ),
-            p: ({ children }) => (
-              <p className="py-3 text-gray-800 text-xl">{children}</p>
-            ),
-            blockquote: ({ children }) => (
-              <blockquote className="py-3 my-6 text-gray-800 text-xl border-l-4 pl-3 border-gray-300">
-                <p>{children}</p>
-              </blockquote>
-            ),
-            img: ({ src, altText, height, width }) => (
-              <div className="block max-w-[480px] h-auto mx-auto">
-                <Image
-                  src={src}
-                  alt={altText}
-                  height={height}
-                  width={width}
-                  objectFit="responsive"
-                />
-              </div>
-            ),
-          }}
-        />
+    <>
+      <Head>
+        {post.seo.title && <title>{post.seo.title}</title>}
+        <meta name="viewport" content="initial-scale=1.0, width=device-width" />
+        {post.seo.description && (
+          <meta name="description" content={post.seo.description}></meta>
+        )}
+
+        {post.seo.title && (
+          <meta property="og:title" content={post.seo.title} />
+        )}
+        {post.seo.description && (
+          <meta property="og:description" content={post.seo.description} />
+        )}
+        {post?.seo?.image?.seoImage?.image?.url && (
+          <meta
+            property="og:image"
+            content={post.seo.image.seoImage.image.url}
+          />
+        )}
+        <meta property="og:image:width" content="1200" />
+        <meta property="og:image:height" content="630" />
+      </Head>
+      <div className="container mx-auto px-10 mb-8 mt-32">
+        <div className="text-black">
+          <RichText
+            className="text-black"
+            content={post.content.raw.children}
+            renderers={{
+              h1: ({ children }) => (
+                <h1 className="text-gray-700 text-3xl font-semibold py-6">
+                  {children}
+                </h1>
+              ),
+              h2: ({ children }) => (
+                <h2 className="py-4 text-gray-700 font-semibold text-2xl">
+                  {children}
+                </h2>
+              ),
+              h3: ({ children }) => (
+                <h3 className="py-3 text-gray-700 font-semibold text-xl">
+                  {children}
+                </h3>
+              ),
+              bold: ({ children }) => (
+                <strong className="text-xl">{children}</strong>
+              ),
+              ol: ({ children }) => (
+                <ol className="py-3 text-gray-800 list-decimal text-xl">
+                  {children}
+                </ol>
+              ),
+              ul: ({ children }) => (
+                <ul className="py-3 text-gray-800 list-disc text-xl">
+                  {children}
+                </ul>
+              ),
+              p: ({ children }) => (
+                <p className="py-3 text-gray-800 text-xl">{children}</p>
+              ),
+              blockquote: ({ children }) => (
+                <blockquote className="py-3 my-6 text-gray-800 text-xl border-l-4 pl-3 border-gray-300">
+                  <p>{children}</p>
+                </blockquote>
+              ),
+              img: ({ src, altText, height, width }) => (
+                <div className="block max-w-[480px] h-auto mx-auto">
+                  <Image
+                    src={src}
+                    alt={altText}
+                    height={height}
+                    width={width}
+                    objectFit="responsive"
+                  />
+                </div>
+              ),
+            }}
+          />
+        </div>
       </div>
-    </div>
+    </>
   );
 };
 export default PostDetails;
