@@ -6,12 +6,11 @@ import Link from "next/link";
 export default function App() {
   const [state, setState] = useState(false);
 
-  // Replace javascript:void(0) path with your path
   const navigation = [
-    { title: "Categories", path: "javascript:void(0)" },
-    { title: "Careers", path: "javascript:void(0)" },
-    { title: "Guides", path: "javascript:void(0)" },
-    { title: "Partners", path: "javascript:void(0)" },
+    { title: "Categories", path: "/" },
+    { title: "Careers", path: "/" },
+    { title: "Guides", path: "/" },
+    { title: "Partners", path: "/" },
   ];
 
   return (
@@ -68,12 +67,10 @@ export default function App() {
           <ul className="justify-center items-center space-y-8 md:flex md:space-x-6 md:space-y-0">
             {navigation.map((item, idx) => {
               return (
-                <Link
-                  href={item.path}
-                  key={idx}
-                  className="text-gray-600 hover:text-indigo-600"
-                >
-                  <a>{item.title}</a>
+                <Link href={item.path} key={idx}>
+                  <a className="text-gray-600 hover:text-indigo-600">
+                    {item.title}
+                  </a>
                 </Link>
               );
             })}
