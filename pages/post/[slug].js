@@ -13,7 +13,7 @@ const PostDetails = ({ post }) => {
   }
 
   return (
-    <div className="container mx-auto px-10 mb-8">
+    <div className="container mx-auto px-10 mb-8 mt-32">
       <div className="text-black">{post.title}</div>
       <div className="text-black">
         <RichText
@@ -21,13 +21,19 @@ const PostDetails = ({ post }) => {
           content={post.content.raw.children}
           renderers={{
             h1: ({ children }) => (
-              <h1 className="text-green-900 text-3xl">{children}</h1>
+              <h1 className="text-gray-700 text-3xl font-semibold py-6">
+                {children}
+              </h1>
             ),
             h2: ({ children }) => (
-              <h2 className="text-green-900 text-2xl">{children}</h2>
+              <h2 className="py-4 text-gray-700 font-semibold text-2xl">
+                {children}
+              </h2>
             ),
             h3: ({ children }) => (
-              <h3 className="text-green-900 text-xl">{children}</h3>
+              <h3 className="py-3 text-gray-700 font-semibold text-xl">
+                {children}
+              </h3>
             ),
             bold: ({ children }) => (
               <strong className="text-xl">{children}</strong>
@@ -46,7 +52,7 @@ const PostDetails = ({ post }) => {
               <p className="py-3 text-gray-800 text-xl">{children}</p>
             ),
             blockquote: ({ children }) => (
-              <blockquote className="py-3 text-gray-800 text-xl border-l-4 pl-3 border-gray-300">
+              <blockquote className="py-3 my-6 text-gray-800 text-xl border-l-4 pl-3 border-gray-300">
                 <p>{children}</p>
               </blockquote>
             ),
