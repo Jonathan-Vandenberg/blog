@@ -1,6 +1,7 @@
 import { useState } from "react";
 import logo from "../public/alt.png";
 import Image from "next/image";
+import Link from "next/link";
 
 export default function App() {
   const [state, setState] = useState(false);
@@ -17,9 +18,11 @@ export default function App() {
     <nav className="bg-white w-full border-b md:border-0 md:static">
       <div className="items-center px-4 max-w-screen-xl mx-auto md:flex md:px-8">
         <div className="flex items-center justify-between py-3 md:py-5 md:block">
-          <a href="javascript:void(0)">
-            <Image src={logo} width={50} height={50} alt="Float UI logo" />
-          </a>
+          <Link href={"/"}>
+            <a href="javascript:void(0)">
+              <Image src={logo} width={50} height={50} alt="Float UI logo" />
+            </a>
+          </Link>
           <div className="md:hidden">
             <button
               className="text-gray-700 outline-none p-2 rounded-md focus:border-gray-400 focus:border"
