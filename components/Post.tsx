@@ -2,7 +2,7 @@ import moment from "moment";
 
 export default function App({ content, post }: any) {
   return (
-    <article className="max-w-2xl px-6 py-16 mx-auto space-y-12 text-gray-700">
+    <article className="max-w-2xl py-16 mx-auto space-y-12 text-gray-700">
       <div className="w-full mx-auto space-y-4 text-center">
         <p className="text-xs font-semibold tracking-wider uppercase">
           #TailwindCSS
