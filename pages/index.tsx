@@ -1,5 +1,6 @@
 import Card2 from "../components/Card2";
 import Cards from "../components/Cards";
+import Home from "../components/Home";
 import PostCard from "../components/PostCard";
 import SideSection from "../components/SideSection";
 import { getPosts } from "../services";
@@ -7,27 +8,13 @@ import { getPosts } from "../services";
 {
   /* // <PostCard key={index} post={post.node} /> */
 }
-export default function Home({ posts }: any) {
+export default function Index({ posts }: any) {
   return (
     <>
-      <div className="mt-28"></div>
-      <div className="container mx-auto px-10 mb-8">
-        <div className="grid grid-cols-1 lg:grid-cols-12 gap-12">
-          <div className="lg:col-span-8 col-span-1">
-            {posts.map((post: { node: any }, index: any) => (
-              <Cards key={index} post={post.node} blogCard={true} />
-            ))}
-          </div>
-          <div className="lg:col-span-4 col-span-1">
-            <div className="lg:sticky relative top-8 space-y-5">
-              {posts.map((post: { node: any }, index: any) => (
-                // <SideSection key={index} post={post.node} blogCard={true} />
-                <Card2 key={index} post={post.node} />
-              ))}
-            </div>
-          </div>
-        </div>
+      <div className="container max-w-6xl underline-offset-2 underline p-6 mx-auto mt-36 text-2xl text-gray-700">
+        Featured Post
       </div>
+      <Home posts={posts} />
     </>
   );
 }
