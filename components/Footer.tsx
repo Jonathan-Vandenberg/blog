@@ -32,14 +32,14 @@ const App = () => {
 
   return (
     <footer className="text-gray-500 bg-white px-4 py-5 max-w-screen-xl mx-auto container w-full">
-      <div className="py-20 max-w-lg sm:mx-auto sm:text-center">
+      {/* <div className="py-20 max-w-lg sm:mx-auto sm:text-center">
         <div className="container mx-auto relative w-32 h-40">
           <Image src={logo} width={32} height={32} alt="image" layout="fill" />
         </div>
         <p className="leading-relaxed mt-2 text-[15px] text-center">
           Alternatively, a better option.
         </p>
-      </div>
+      </div> */}
       <ul className="items-center justify-center mt-8 space-y-5 sm:flex sm:space-x-4 sm:space-y-0">
         {footerNavs.map((item, idx) => (
           <li key={idx} className=" hover:text-gray-800">
