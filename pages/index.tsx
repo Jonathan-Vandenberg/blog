@@ -1,5 +1,7 @@
+import Card2 from "../components/Card2";
 import Cards from "../components/Cards";
 import PostCard from "../components/PostCard";
+import SideSection from "../components/SideSection";
 import { getPosts } from "../services";
 
 {
@@ -17,7 +19,12 @@ export default function Home({ posts }: any) {
             ))}
           </div>
           <div className="lg:col-span-4 col-span-1">
-            <div className="lg:sticky relative top-8"></div>
+            <div className="lg:sticky relative top-8 space-y-5">
+              {posts.map((post: { node: any }, index: any) => (
+                // <SideSection key={index} post={post.node} blogCard={true} />
+                <Card2 key={index} post={post.node} />
+              ))}
+            </div>
           </div>
         </div>
       </div>

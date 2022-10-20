@@ -7,15 +7,13 @@ import { graphCMSImageLoader } from "../util";
 
 const PostCard = ({ post }) => (
   <div className="bg-white shadow-lg rounded-lg p-0 lg:p-8 pb-12 mb-8">
-    <div className="relative shadow-md inline-block w-full h-60 lg:h-80 mb-6">
+    <div className="mb-12">
       {post?.coverImage?.url && (
-        <Image
-          unoptimized
-          loader={graphCMSImageLoader}
-          alt={post.title}
-          className="shadow-lg rounded-t-lg lg:rounded-lg"
-          layout="fill"
+        <img
           src={post.coverImage.url}
+          loading="lazy"
+          alt={post.title}
+          className="w-full h-auto rounded-t-md"
         />
       )}
     </div>
