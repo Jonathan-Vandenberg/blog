@@ -1,6 +1,8 @@
+import moment from "moment";
+
 export default function App({ content, post }: any) {
   return (
-    <article className="max-w-2xl px-6 py-24 mx-auto space-y-12 text-gray-700">
+    <article className="max-w-2xl px-6 py-16 mx-auto space-y-12 text-gray-700">
       <div className="w-full mx-auto space-y-4 text-center">
         <p className="text-xs font-semibold tracking-wider uppercase">
           #TailwindCSS
@@ -14,12 +16,13 @@ export default function App({ content, post }: any) {
             rel="noopener noreferrer"
             href="#"
             target="_blank"
-            className="underline dark:text-amber-400"
+            className="underline text-black px-2"
           >
             <span itemProp="name">{post.author.name}</span>
           </a>
-          on
-          <time dateTime="2021-02-12 15:34:18-0200">{post.createdAt}</time>
+          <span className="align-middle">
+            {moment(post.createdAt).format("MMM DD, YYYY")}
+          </span>
         </p>
       </div>
       <div className="text-gray-500">{content}</div>
