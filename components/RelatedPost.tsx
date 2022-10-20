@@ -5,7 +5,7 @@ export default function App() {
         <div className="space-y-2 text-center">
           <h2 className="text-3xl font-bold">Partem reprimique an pro</h2>
           <p className="font-serif text-sm dark:text-gray-400">
-            Qualisque erroribus usu at, duo te agam soluta mucius.
+            Qualisque erroribus usu at, do te agam soluta mucius.
           </p>
         </div>
         <div className="grid grid-cols-1 gap-x-4 gap-y-8 md:grid-cols-2 lg:grid-cols-4">

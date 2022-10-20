@@ -1,4 +1,5 @@
 import React from "react";
+import RelatedPost from "../components/RelatedPost";
 
 import moment from "moment";
 
@@ -135,6 +136,7 @@ const PostDetail = ({ post }) => {
           })}
         </div>
       </div>
+      <RelatedPost />
     </>
   );
 };

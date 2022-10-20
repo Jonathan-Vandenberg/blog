@@ -37,7 +37,7 @@ const PostDetails = ({ post }) => {
         <meta property="og:image:width" content="1200" />
         <meta property="og:image:height" content="630" />
       </Head>
-      <div className="mx-auto mb-8 mt-32 lg:max-w-[730px]">
+      <div className="mx-auto mb-8 mt-32 lg:max-w-[730px] px-6">
         <div className="text-black">
           <RichText
             className="text-black"
