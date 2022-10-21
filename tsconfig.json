@@ -21,7 +21,8 @@
     "next-env.d.ts",
     "**/*.ts",
     "**/*.tsx",
-    "components/PostCard.jsx"
+    "components/PostCard.jsx",
+    "pages/about.jsx"
   ],
   "exclude": ["node_modules"]
 }

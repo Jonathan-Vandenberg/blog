@@ -39,7 +39,10 @@ export default function App() {
         </li>
 
         <li>
-          <a href="#" className="block transition-colors hover:text-gray-700">
+          <a
+            href="#"
+            className="block transition-colors hover:text-gray-700 text-xs"
+          >
             Shirts
           </a>
         </li>
@@ -60,7 +63,10 @@ export default function App() {
         </li>
 
         <li>
-          <a href="#" className="block transition-colors hover:text-gray-700">
+          <a
+            href="#"
+            className="block transition-colors hover:text-gray-700 text-xs"
+          >
             Plain Tee
           </a>
         </li>

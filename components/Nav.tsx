@@ -2,6 +2,7 @@ import { useState } from "react";
 import logo from "../public/alt.png";
 import Image from "next/image";
 import Link from "next/link";
+import BreadCrumbs from "./BreadCrumbs";
 
 export default function App() {
   const [state, setState] = useState(false);
@@ -10,24 +11,29 @@ export default function App() {
     { title: "Categories", path: "/" },
     { title: "Careers", path: "/" },
     { title: "Guides", path: "/" },
-    { title: "Partners", path: "/" },
+    { title: "About", path: "/about" },
   ];
 
   return (
-    <nav className="bg-white w-full border-b md:border-0 md:static">
+    <nav className="bg-white/80 w-full border-b md:border-0 md:static relative">
       <div className="items-center px-4 max-w-screen-xl mx-auto md:flex md:px-8">
-        <div className="flex items-center justify-between py-3 md:py-5 md:block">
-          <div className="w-16 h-16">
-            <Link href={"/"}>
-              <a>
-                <Image
-                  src={logo}
-                  width={300}
-                  height={300}
-                  alt="Float UI logo"
-                />
-              </a>
-            </Link>
+        <div className="flex items-center justify-between py-2 md:py-2 md:block">
+          <div className="flex space-x-8 items-baseline">
+            <div className="w-10 h-10">
+              <Link href={"/"}>
+                <a>
+                  <Image
+                    src={logo}
+                    width={300}
+                    height={300}
+                    alt="Float UI logo"
+                  />
+                </a>
+              </Link>
+            </div>
+            <div className="bg-white border-[1px] border-gray-500 rounded-full px-2">
+              <BreadCrumbs />
+            </div>
           </div>
           <div className="md:hidden">
             <button

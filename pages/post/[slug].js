@@ -39,8 +39,7 @@ const PostDetails = ({ post }) => {
         <meta property="og:image:width" content="1200" />
         <meta property="og:image:height" content="630" />
       </Head>
-      <div className="mx-auto mt-32 lg:max-w-[730px] px-6">
-        <BreadCrumbs />
+      <div className="mx-auto mt-14 md:mt-20 lg:max-w-[730px] px-6">
         <Post
           post={post}
           content={
