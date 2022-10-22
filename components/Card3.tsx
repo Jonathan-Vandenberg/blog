@@ -9,11 +9,16 @@ export default function App({ post }: any) {
       className="max-w-sm mx-auto border-b-2 border-gray-500 group hover:no-underline focus:no-underline"
     >
       {post?.coverImage?.url && (
-        <img
-          role="presentation"
-          className="object-cover w-full rounded h-44"
-          src={post.coverImage.url}
-        />
+        <Link href={`/post/${post.slug}`}>
+          <a area-label="post cover image">
+            <img
+              role="presentation"
+              className="object-cover w-full rounded h-44"
+              src={post.coverImage.url}
+              alt={post.title}
+            />
+          </a>
+        </Link>
       )}
       <div className="p-6 space-y-2">
         <Link href={`/post/${post.slug}`}>

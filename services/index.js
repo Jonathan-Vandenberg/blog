@@ -182,6 +182,39 @@ export const getSimilarPosts = async (category, slug) => {
   return result.posts;
 };
 
+export const getPostsByCategory = async () => {
+  const query = gql`
+    query MyQuery {
+      postsConnection(where: { category: SELF_DEVELOPMENT }) {
+        edges {
+          node {
+            content {
+              raw
+            }
+            coverImage {
+              url
+            }
+            createdAt
+            excerpt
+            slug
+            title
+            author {
+              biography
+              name
+              picture {
+                url
+              }
+            }
+          }
+        }
+      }
+    }
+  `;
+  const result = await request(graphqlAPI, query);
+
+  return result.postsConnection.edges;
+};
+
 // export const getAdjacentPosts = async (createdAt, slug) => {
 //   const query = gql`
 //     query GetAdjacentPosts($createdAt: DateTime!, $slug: String!) {
