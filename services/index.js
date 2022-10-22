@@ -317,7 +317,7 @@ export const getTravelPosts = async () => {
 export const getTechnologyPosts = async () => {
   const query = gql`
     query MyQuery {
-      postsConnection(where: { category: TECHNOLOGY }) {
+      postsConnection(where: { category: TECH }) {
         edges {
           node {
             content {
