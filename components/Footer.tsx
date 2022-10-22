@@ -2,32 +2,14 @@ import Image from "next/image";
 import logo from "../public/alt.png";
 
 const App = () => {
-  const footerNavs = [
-    {
-      href: "javascript:void()",
-      name: "About",
-    },
-    {
-      href: "javascript:void()",
-      name: "Blog",
-    },
-    {
-      href: "javascript:void()",
-      name: "Categories",
-    },
-    {
-      href: "javascript:void()",
-      name: "Team",
-    },
-    {
-      href: "javascript:void()",
-      name: "Careers",
-    },
-
-    {
-      href: "javascript:void()",
-      name: "Support",
-    },
+  const navigation = [
+    { title: "Self Development", path: "/self-development" },
+    { title: "Health", path: "/health" },
+    { title: "Technology", path: "/technology" },
+    { title: "Trends", path: "/trends" },
+    { title: "News", path: "/news" },
+    { title: "Travel", path: "/travel" },
+    { title: "About", path: "/about" },
   ];
 
   return (
@@ -41,9 +23,9 @@ const App = () => {
         </p>
       </div> */}
       <ul className="items-center justify-center mt-8 space-y-5 sm:flex sm:space-x-4 sm:space-y-0">
-        {footerNavs.map((item, idx) => (
+        {navigation.map((item, idx) => (
           <li key={idx} className=" hover:text-gray-800">
-            <a href={item.href}>{item.name}</a>
+            <a href={item.path}>{item.title}</a>
           </li>
         ))}
       </ul>

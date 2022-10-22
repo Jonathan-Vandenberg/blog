@@ -8,14 +8,17 @@ export default function App() {
   const [state, setState] = useState(false);
 
   const navigation = [
-    { title: "Categories", path: "/" },
-    { title: "Careers", path: "/" },
-    { title: "Guides", path: "/" },
+    { title: "Self Development", path: "/self-development" },
+    { title: "Health", path: "/health" },
+    { title: "Technology", path: "/technology" },
+    { title: "Trends", path: "/trends" },
+    { title: "News", path: "/news" },
+    { title: "Travel", path: "/travel" },
     { title: "About", path: "/about" },
   ];
 
   return (
-    <nav className="bg-white/80 w-full border-b md:border-0 md:static relative">
+    <nav className="bg-white/90 w-full border-b md:border-0 md:static relative">
       <div className="items-center px-4 max-w-screen-xl mx-auto md:flex md:px-8">
         <div className="flex items-center justify-between py-2 md:py-2 md:block">
           <div className="flex space-x-8 items-baseline">
@@ -71,7 +74,7 @@ export default function App() {
           </div>
         </div>
         <div
-          className={`flex-1 justify-self-center pb-3 mt-8 md:block md:pb-0 md:mt-0 ${
+          className={`flex-1 justify-self-center pb-7 mt-8 md:block md:pb-0 md:mt-0 ${
             state ? "block" : "hidden"
           }`}
         >
@@ -80,7 +83,7 @@ export default function App() {
               return (
                 <li key={idx}>
                   <Link href={item.path}>
-                    <a className="text-gray-600 hover:text-indigo-600">
+                    <a className="text-gray-600 hover:text-gray-900">
                       {item.title}
                     </a>
                   </Link>

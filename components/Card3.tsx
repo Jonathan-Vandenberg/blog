@@ -6,7 +6,7 @@ export default function App({ post }: any) {
     <a
       rel="noopener noreferrer"
       href="#"
-      className="max-w-sm mx-auto border-b-2 border-gray-500 group hover:no-underline focus:no-underline"
+      className="max-w-sm mx-auto bg-gray-100 group hover:no-underline focus:no-underline"
     >
       {post?.coverImage?.url && (
         <Link href={`/post/${post.slug}`}>
