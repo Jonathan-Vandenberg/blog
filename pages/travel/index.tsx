@@ -1,19 +1,19 @@
 import Head from "next/head";
 import HeaderCategories from "../../components/HeaderCategories";
 import Home from "../../components/Home";
-import { getSelfDevelopmentPosts } from "../../services";
+import { getTravelPosts } from "../../services";
 
 export default function Index({ posts }: any) {
   return (
     <>
       <Head>
-        <title>Self Development</title>
+        <title>Travel</title>
         <meta name="viewport" content="initial-scale=1.0, width=device-width" />
         <meta
           name="description"
           content="Information for alternative options to a wide variety of topics including self development, health, technology, travel, news and trends."
         ></meta>
-        <meta property="og:title" content="Self Development" />
+        <meta property="og:title" content="Travel" />
         <meta
           property="og:description"
           content="Information for alternative options to a wide variety of topics including self development, health, technology, travel, news and trends."
@@ -26,8 +26,8 @@ export default function Index({ posts }: any) {
         <meta property="og:image:height" content="900" />
       </Head>
       <HeaderCategories
-        categoryName={"Self Development"}
-        categoryDescription={"Alternative ways to better yourself"}
+        categoryName={"Travel"}
+        categoryDescription={"Finding the perfect travel destination for you"}
       />
       <Home posts={posts} />
     </>
@@ -36,7 +36,7 @@ export default function Index({ posts }: any) {
 
 // Fetch data at build time
 export async function getStaticProps() {
-  const posts = (await getSelfDevelopmentPosts()) || [];
+  const posts = (await getTravelPosts()) || [];
   return {
     props: { posts },
   };

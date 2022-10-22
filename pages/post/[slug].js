@@ -6,9 +6,8 @@ import React from "react";
 import Post from "../../components/Post";
 import BreadCrumbs from "../../components/BreadCrumbs.tsx";
 import RelatedPosts from "../../components/RelatedPosts.tsx";
-import { useState, useEffect } from "react";
 
-import { getPostDetails, getPosts, getSimilarPosts } from "../../services";
+import { getPostDetails, getPosts } from "../../services";
 
 const PostDetails = ({ post }) => {
   const router = useRouter();
