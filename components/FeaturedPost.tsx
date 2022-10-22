@@ -1,3 +1,5 @@
+import moment from "moment";
+
 export default function App({ post }: any) {
   return (
     <a
@@ -16,7 +18,9 @@ export default function App({ post }: any) {
         <h3 className="text-2xl font-semibold sm:text-4xl text-gray-700 group-hover:underline group-focus:underline">
           {post.title}
         </h3>
-        <span className="text-xs dark:text-gray-700">{post.createdAt}</span>
+        <span className="align-middle text-gray-700">
+          {moment(post.createdAt).format("MMM DD, YYYY")}
+        </span>
         <p className="text-black">{post.excerpt}</p>
       </div>
     </a>
