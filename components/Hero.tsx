@@ -2,8 +2,7 @@ import heroImage from "../public/alt.png";
 import Image from "next/image";
 export default function App() {
   return (
-    <section className="cta-sec relative max-w-screen-xl mx-auto py-4 px-4 sm:px-8 container mx-auto">
-      <div className="absolute top-0 left-0 w-full h-full bg-white opacity-40"></div>
+    <section className="cta-sec relative max-w-screen-xl py-4 px-4 sm:px-8 container mx-auto">
       <div className="relative z-10 gap-5 items-center lg:flex">
         <div className="flex-1 max-w-lg py-5 sm:mx-auto sm:text-center lg:max-w-max lg:text-left">
           <h3 className="text-3xl text-gray-500 font-semibold md:text-4xl text-center">

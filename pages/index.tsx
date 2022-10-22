@@ -29,7 +29,7 @@ export default function Index({ posts }: any) {
         <meta property="og:image:width" content="900" />
         <meta property="og:image:height" content="900" />
       </Head>
-      <div className="md:mt-14 container mx-auto py-28">
+      <div className="md:mt-14 container mx-auto lg:mb-16 pt-12">
         <Hero />
       </div>
       <Categories />
