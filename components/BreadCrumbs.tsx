@@ -1,26 +1,34 @@
-export default function App({ postCategory, title }: any) {
-  let category: string;
+import { useEffect, useState } from "react";
 
-  switch (postCategory) {
-    case "SELF_DEVELOPMENT":
-      category = "Self Development";
-      break;
-    case "HEALTH":
-      category = "Health";
-      break;
-    case "TRAVEL":
-      category = "Travel";
-      break;
-    case "NEWS":
-      category = "News";
-      break;
-    case "TECH":
-      category = "Tech";
-      break;
-    case "TRENDS":
-      category = "Trends";
-      break;
-  }
+export default function App({ postCategory, title }: any) {
+  const [category, setCategory] = useState("");
+
+  useEffect(() => {
+    categoryName();
+  }, []);
+
+  const categoryName = () => {
+    switch (postCategory) {
+      case "SELF_DEVELOPMENT":
+        setCategory("Self Development");
+        break;
+      case "HEALTH":
+        setCategory("Health");
+        break;
+      case "TRAVEL":
+        setCategory("Travel");
+        break;
+      case "NEWS":
+        setCategory("News");
+        break;
+      case "TECH":
+        setCategory("Tech");
+        break;
+      case "TRENDS":
+        setCategory("Trends");
+        break;
+    }
+  };
 
   return (
     <nav aria-label="Breadcrumb">
