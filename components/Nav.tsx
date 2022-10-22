@@ -81,7 +81,7 @@ export default function App() {
           <ul className="justify-center items-center space-y-8 md:flex md:space-x-6 md:space-y-0">
             {navigation.map((item, idx) => {
               return (
-                <li key={idx}>
+                <li key={idx} onClick={() => setState(!state)}>
                   <Link href={item.path}>
                     <a className="text-gray-600 hover:text-gray-900">
                       {item.title}

@@ -2,8 +2,8 @@ import moment from "moment";
 
 export default function App({ content, post }: any) {
   return (
-    <article className="max-w-2xl py-6 mx-auto mt-6 text-gray-700">
-      <div className="w-full mx-auto text-center">
+    <article className="max-w-2xl pb-6 mx-auto mt-6 text-gray-700">
+      <div className="w-full mx-auto text-center border-y-4 border-gray-200 py-4">
         {post?.category && (
           <p className="text-xs font-semibold tracking-wider uppercase">
             #{post.category}
