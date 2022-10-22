@@ -1,12 +1,14 @@
 import { RichText } from "@graphcms/rich-text-react-renderer";
-import Image from "next/image";
-import React from "react";
-import { useRouter } from "next/router";
 import Head from "next/head";
-import BreadCrumbs from "../../components/BreadCrumbs";
+import Image from "next/image";
+import { useRouter } from "next/router";
+import React from "react";
 import Post from "../../components/Post";
+import BreadCrumbs from "../../components/BreadCrumbs.tsx";
+import RelatedPosts from "../../components/RelatedPosts.tsx";
+import { useState, useEffect } from "react";
 
-import { getPosts, getPostDetails } from "../../services";
+import { getPostDetails, getPosts, getSimilarPosts } from "../../services";
 
 const PostDetails = ({ post }) => {
   const router = useRouter();
@@ -39,7 +41,10 @@ const PostDetails = ({ post }) => {
         <meta property="og:image:width" content="1200" />
         <meta property="og:image:height" content="630" />
       </Head>
-      <div className="mx-auto mt-14 md:mt-20 lg:max-w-[730px] px-6">
+      <div className="mx-auto lg:max-w-[730px] px-6">
+        <div className="mt-20">
+          <BreadCrumbs postCategory={post.category} title={post.title} />
+        </div>
         <Post
           post={post}
           content={
@@ -101,165 +106,16 @@ const PostDetails = ({ post }) => {
           }
         />
       </div>
-      <RelatedPost />
+      <RelatedPosts slug={post.slug} category={post.category} />
     </>
   );
 };
 export default PostDetails;
 
-const RelatedPost = () => {
-  return (
-    <section className="sm:py-12">
-      <div className="container p-6 mx-auto space-y-8">
-        <div className="space-y-2 text-center">
-          <h2 className="text-3xl font-bold text-gray-700">Related posts...</h2>
-        </div>
-        <div className="grid grid-cols-1 gap-x-4 gap-y-8 md:grid-cols-2 lg:grid-cols-4">
-          <article className="flex flex-col">
-            <a
-              rel="noopener noreferrer"
-              href="#"
-              aria-label="Te nulla oportere reprimique his dolorum"
-            >
-              <img
-                alt=""
-                className="object-cover w-full h-52 dark:bg-gray-500"
-                src="https://source.unsplash.com/200x200/?fashion?1"
-              />
-            </a>
-            <div className="flex flex-col flex-1 p-6">
-              <a
-                rel="noopener noreferrer"
-                href="#"
-                aria-label="Te nulla oportere reprimique his dolorum"
-              ></a>
-              <a
-                rel="noopener noreferrer"
-                href="#"
-                className="text-xs tracking-wider uppercase hover:underline text-gray-800"
-              >
-                Convenire
-              </a>
-              <h3 className="flex-1 py-2 text-lg font-semibold leading-snug text-gray-700">
-                Te nulla oportere reprimique his dolorum
-              </h3>
-              <div className="flex flex-wrap justify-between pt-3 space-x-2 text-xs text-gray-500">
-                <span>June 1, 2020</span>
-                <span>2.1K views</span>
-              </div>
-            </div>
-          </article>
-          <article className="flex flex-col">
-            <a
-              rel="noopener noreferrer"
-              href="#"
-              aria-label="Te nulla oportere reprimique his dolorum"
-            >
-              <img
-                alt=""
-                className="object-cover w-full h-52 dark:bg-gray-500"
-                src="https://source.unsplash.com/200x200/?fashion?2"
-              />
-            </a>
-            <div className="flex flex-col flex-1 p-6">
-              <a
-                rel="noopener noreferrer"
-                href="#"
-                aria-label="Te nulla oportere reprimique his dolorum"
-              ></a>
-              <a
-                rel="noopener noreferrer"
-                href="#"
-                className="text-xs tracking-wider uppercase hover:underline text-gray-800"
-              >
-                Convenire
-              </a>
-              <h3 className="flex-1 py-2 text-lg font-semibold leading-snug text-gray-700">
-                Te nulla oportere reprimique his dolorum
-              </h3>
-              <div className="flex flex-wrap justify-between pt-3 space-x-2 text-xs dark:text-gray-400">
-                <span>June 2, 2020</span>
-                <span>2.2K views</span>
-              </div>
-            </div>
-          </article>
-          <article className="flex flex-col">
-            <a
-              rel="noopener noreferrer"
-              href="#"
-              aria-label="Te nulla oportere reprimique his dolorum"
-            >
-              <img
-                alt=""
-                className="object-cover w-full h-52 dark:bg-gray-500"
-                src="https://source.unsplash.com/200x200/?fashion?3"
-              />
-            </a>
-            <div className="flex flex-col flex-1 p-6">
-              <a
-                rel="noopener noreferrer"
-                href="#"
-                aria-label="Te nulla oportere reprimique his dolorum"
-              ></a>
-              <a
-                rel="noopener noreferrer"
-                href="#"
-                className="text-xs tracking-wider uppercase hover:underline text-gray-800"
-              >
-                Convenire
-              </a>
-              <h3 className="flex-1 py-2 text-lg font-semibold leading-snug text-gray-700">
-                Te nulla oportere reprimique his dolorum
-              </h3>
-              <div className="flex flex-wrap justify-between pt-3 space-x-2 text-xs dark:text-gray-400">
-                <span>June 3, 2020</span>
-                <span>2.3K views</span>
-              </div>
-            </div>
-          </article>
-          <article className="flex flex-col">
-            <a
-              rel="noopener noreferrer"
-              href="#"
-              aria-label="Te nulla oportere reprimique his dolorum"
-            >
-              <img
-                alt=""
-                className="object-cover w-full h-52 dark:bg-gray-500"
-                src="https://source.unsplash.com/200x200/?fashion?4"
-              />
-            </a>
-            <div className="flex flex-col flex-1 p-6">
-              <a
-                rel="noopener noreferrer"
-                href="#"
-                aria-label="Te nulla oportere reprimique his dolorum"
-              ></a>
-              <a
-                rel="noopener noreferrer"
-                href="#"
-                className="text-xs tracking-wider uppercase hover:underline text-gray-800"
-              >
-                Convenire
-              </a>
-              <h3 className="flex-1 py-2 text-lg font-semibold leading-snug text-gray-700">
-                Te nulla oportere reprimique his dolorum
-              </h3>
-              <div className="flex flex-wrap justify-between pt-3 space-x-2 text-xs dark:text-gray-400">
-                <span>June 4, 2020</span>
-                <span>2.4K views</span>
-              </div>
-            </div>
-          </article>
-        </div>
-      </div>
-    </section>
-  );
-};
-
 // Fetch data at build time
 export async function getStaticProps({ params }) {
   const data = await getPostDetails(params.slug);
+
   return { props: { post: data } };
 }
 
@@ -268,7 +124,9 @@ export async function getStaticProps({ params }) {
 export async function getStaticPaths() {
   const posts = await getPosts();
   return {
-    paths: posts.map(({ node: { slug } }) => ({ params: { slug } })),
+    paths: posts.map(({ node: { slug } }) => ({
+      params: { slug },
+    })),
     fallback: true,
   };
 }

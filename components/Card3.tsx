@@ -1,3 +1,4 @@
+import moment from "moment";
 import Link from "next/link";
 
 export default function App({ post }: any) {
@@ -22,7 +23,9 @@ export default function App({ post }: any) {
             </h3>
           </a>
         </Link>
-        <span className="text-xs text-gray-700">{post.createdAt}</span>
+        <span className="align-middle text-gray-500">
+          {moment(post.createdAt).format("MMM DD, YYYY")}
+        </span>
         <p className="text-black">{post.excerpt}</p>
       </div>
     </a>

@@ -22,7 +22,8 @@
     "**/*.ts",
     "**/*.tsx",
     "components/PostCard.jsx",
-    "pages/about.jsx"
+    "pages/about.jsx",
+    "components/Categories.jsx"
   ],
   "exclude": ["node_modules"]
 }

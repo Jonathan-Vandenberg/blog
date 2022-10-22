@@ -2,6 +2,43 @@ import { request, gql } from "graphql-request";
 
 const graphqlAPI = process.env.NEXT_PUBLIC_GRAPHCMS_ENDPOINT;
 
+// import { GraphQLClient } from "graphql-request";
+
+// const hygraph = new GraphQLClient(process.env.NEXT_PUBLIC_GRAPHCMS_ENDPOINT);
+
+// export const getPosts = async () => {
+//   const { posts } = await hygraph.request(
+//     `
+//     query GetPosts {
+//       postsConnection {
+//         edges {
+//           cursor
+//           node {
+//             author {
+//               biography
+//               name
+//               id
+//             }
+//             category
+//             createdAt
+//             slug
+//             title
+//             excerpt
+//             coverImage {
+//               url
+//             }
+//           }
+//         }
+//       }
+//     }
+//   `
+//   );
+
+//   return {
+//     posts,
+//   };
+// };
+
 export const getPosts = async () => {
   const query = gql`
     query MyQuery {
@@ -13,10 +50,8 @@ export const getPosts = async () => {
               biography
               name
               id
-              picture {
-                url
-              }
             }
+            category
             createdAt
             slug
             title
@@ -35,19 +70,41 @@ export const getPosts = async () => {
   return result.postsConnection.edges;
 };
 
-// export const getCategories = async () => {
-//   const query = gql`
-//     query GetGategories {
-//       categories {
-//         name
+// export const getSimilarPost = async (category, slug) => {
+//   const { similarPosts } = await hygraph.request(
+//     `
+//     query posts(where: { slug_not: $slug, AND: { category: $category } }) {
+//         category
+//         content {
+//           raw
+//         }
+//         coverImage {
+//           url
+//         }
+//         seo {
+//           description
+//           title
+//         }
 //         slug
-//       }
+//         title
+//         author {
+//           biography
+//           name
+//           picture {
+//             url
+//           }
+//         }
 //     }
-//   `;
+//   `,
+//     {
+//       slug,
+//       category,
+//     }
+//   );
 
-//   const result = await request(graphqlAPI, query);
-
-//   return result.categories;
+//   return {
+//     similarPosts,
+//   };
 // };
 
 export const getPostDetails = async (slug) => {
@@ -55,6 +112,7 @@ export const getPostDetails = async (slug) => {
     query GetPostDetails($slug: String!) {
       post(where: { slug: $slug }) {
         title
+        category
         excerpt
         coverImage {
           url
@@ -67,7 +125,6 @@ export const getPostDetails = async (slug) => {
         slug
         content {
           raw
-          markdown
         }
         seo {
           description
@@ -89,29 +146,38 @@ export const getPostDetails = async (slug) => {
   return result.post;
 };
 
-// export const getSimilarPosts = async (categories, slug) => {
-//   const query = gql`
-//     query GetPostDetails($slug: String!, $categories: [String!]) {
-//       posts(
-//         where: {
-//           slug_not: $slug
-//           AND: { categories_some: { slug_in: $categories } }
-//         }
-//         last: 3
-//       ) {
-//         title
-//         featuredImage {
-//           url
-//         }
-//         createdAt
-//         slug
-//       }
-//     }
-//   `;
-//   const result = await request(graphqlAPI, query, { slug, categories });
+export const getSimilarPosts = async (category, slug) => {
+  const query = gql`
+    query MyQuery($category: Category!, $slug: String!) {
+      posts(where: { category: $category, AND: { slug_not: $slug } }) {
+        category
+        excerpt
+        slug
+        seo {
+          title
+          description
+        }
+        title
+        content {
+          raw
+        }
+        coverImage {
+          url
+        }
+        author {
+          biography
+          name
+          picture {
+            url
+          }
+        }
+      }
+    }
+  `;
+  const result = await request(graphqlAPI, query, { category, slug });
 
-//   return result.posts;
-// };
+  return result.posts;
+};
 
 // export const getAdjacentPosts = async (createdAt, slug) => {
 //   const query = gql`
@@ -148,42 +214,33 @@ export const getPostDetails = async (slug) => {
 //   return { next: result.next[0], previous: result.previous[0] };
 // };
 
-// export const getCategoryPost = async (slug) => {
-//   const query = gql`
-//     query GetCategoryPost($slug: String!) {
-//       postsConnection(where: { categories_some: { slug: $slug } }) {
-//         edges {
-//           cursor
-//           node {
-//             author {
-//               bio
-//               name
-//               id
-//               photo {
-//                 url
-//               }
-//             }
-//             createdAt
-//             slug
-//             title
-//             excerpt
-//             featuredImage {
-//               url
-//             }
-//             categories {
-//               name
-//               slug
-//             }
-//           }
-//         }
-//       }
-//     }
-//   `;
+export const getCategoryPosts = async (category) => {
+  const query = gql`
+  query GetCategoryPosts($category: String!) {
+      postsConnection(where: { category: $category }) {
+        edges {
+          cursor
+          node {
+            author {
+              biography
+              name
+            }
+            category
+            createdAt
+            slug
+            title
+            excerpt
+            coverImage {
+              url
+            }
+          }
+        }
+    }
+  `;
+  const result = await request(graphqlAPI, query, { category });
 
-//   const result = await request(graphqlAPI, query, { slug });
-
-//   return result.postsConnection.edges;
-// };
+  return result.postsConnection.edges;
+};
 
 // export const getFeaturedPosts = async () => {
 //   const query = gql`

@@ -31,9 +31,6 @@ export default function App() {
                 </a>
               </Link>
             </div>
-            <div className="bg-white border-[1px] border-gray-500 rounded-full px-2">
-              <BreadCrumbs />
-            </div>
           </div>
           <div className="md:hidden">
             <button

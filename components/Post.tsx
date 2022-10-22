@@ -2,15 +2,17 @@ import moment from "moment";
 
 export default function App({ content, post }: any) {
   return (
-    <article className="max-w-2xl py-16 mx-auto space-y-12 text-gray-700">
-      <div className="w-full mx-auto space-y-4 text-center">
-        <p className="text-xs font-semibold tracking-wider uppercase">
-          #TailwindCSS
-        </p>
+    <article className="max-w-2xl py-6 mx-auto mt-6 text-gray-700">
+      <div className="w-full mx-auto text-center">
+        {post?.category && (
+          <p className="text-xs font-semibold tracking-wider uppercase">
+            #{post.category}
+          </p>
+        )}
         <h1 className="text-4xl font-bold leading-tight md:text-5xl">
           {post.title}
         </h1>
-        <p className="text-sm dark:text-gray-400">
+        <p className="text-sm dark:text-gray-400 mt-2">
           by
           <a
             rel="noopener noreferrer"
@@ -26,7 +28,7 @@ export default function App({ content, post }: any) {
         </p>
       </div>
       <div className="text-gray-500">{content}</div>
-      <div className="pt-12 border-t dark:border-gray-700">
+      <div className="pt-12 pb-6 border-y dark:border-gray-700">
         <div className="flex flex-col space-y-4 md:space-y-0 md:space-x-6 md:flex-row">
           <img
             src="https://source.unsplash.com/75x75/?portrait"
