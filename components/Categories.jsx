@@ -5,6 +5,8 @@ import selfDevelopmentImage from "../public/categories/self-development1.jpg";
 import travelImage from "../public/categories/travel1.jpg";
 import trendsImage from "../public/categories/trends1.jpg";
 
+import Image from "next/image";
+
 export default function App() {
   return (
     <div className="container mx-auto">
@@ -19,7 +21,7 @@ export default function App() {
             data-mdb-ripple="true"
             data-mdb-ripple-color="dark"
           >
-            <img
+            <Image
               src={selfDevelopmentImage}
               className="w-full transition duration-300 ease-linear align-middle"
             />
@@ -49,7 +51,7 @@ export default function App() {
             data-mdb-ripple="true"
             data-mdb-ripple-color="dark"
           >
-            <img
+            <Image
               src={techImage}
               className="w-full transition duration-300 ease-linear align-middle"
             />
@@ -79,7 +81,7 @@ export default function App() {
             data-mdb-ripple="true"
             data-mdb-ripple-color="dark"
           >
-            <img
+            <Image
               src={healhImage}
               className="w-full transition duration-300 ease-linear align-middle"
             />
@@ -107,7 +109,7 @@ export default function App() {
             data-mdb-ripple="true"
             data-mdb-ripple-color="dark"
           >
-            <img
+            <Image
               src={newsImage}
               className="w-full transition duration-300 ease-linear align-middle"
             />
@@ -135,7 +137,7 @@ export default function App() {
             data-mdb-ripple="true"
             data-mdb-ripple-color="dark"
           >
-            <img
+            <Image
               src={travelImage}
               className="w-full transition duration-300 ease-linear align-middle"
             />
@@ -163,7 +165,7 @@ export default function App() {
             data-mdb-ripple="true"
             data-mdb-ripple-color="dark"
           >
-            <img
+            <Image
               src={trendsImage}
               className="w-full transition duration-300 ease-linear align-middle"
             />
