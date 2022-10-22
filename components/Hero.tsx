@@ -1,4 +1,4 @@
-import heroImage from "../public/heroImage.jpg";
+import heroImage from "../public/alt.png";
 import Image from "next/image";
 export default function App() {
   return (
@@ -6,16 +6,11 @@ export default function App() {
       <div className="absolute top-0 left-0 w-full h-full bg-white opacity-40"></div>
       <div className="relative z-10 gap-5 items-center lg:flex">
         <div className="flex-1 max-w-lg py-5 sm:mx-auto sm:text-center lg:max-w-max lg:text-left">
-          <h3 className="text-3xl text-gray-500 font-semibold md:text-4xl">
-            <span className="text-black">Alternatively,</span> a better way to
-            improve
-            <span className="text-black">
-              {" "}
-              <i>your life</i>
-            </span>
+          <h3 className="text-3xl text-gray-500 font-semibold md:text-4xl text-center">
+            <span className="text-black">Alternatively</span> a better option
           </h3>
         </div>
-        <div className="flex-1 mt-5 mx-auto sm:w-9/12 lg:mt-0 lg:w-auto">
+        <div className="flex-1 mt-5 mx-auto sm:w-9/12 lg:mt-0 lg:w-auto block max-w-[120px]">
           <Image
             src={heroImage}
             alt=""

@@ -1,3 +1,4 @@
+import AnimatedBG from "../components/AnimatedBG";
 import Categories from "../components/Categories";
 import Hero from "../components/Hero";
 import Home from "../components/Home";
@@ -9,11 +10,8 @@ import { getPosts } from "../services";
 export default function Index({ posts }: any) {
   return (
     <>
-      <div className="relative mt-14 md:mt-36">
+      <div className="md:mt-14 container mx-auto py-28">
         <Hero />
-        {/* <div className="absolute top-0 transform translate-x-[25%]">
-          <AnimatedBG />
-        </div> */}
       </div>
       <Categories />
       <div className="container max-w-6xl underline-offset-2 underline p-6 mx-auto text-2xl text-gray-700">

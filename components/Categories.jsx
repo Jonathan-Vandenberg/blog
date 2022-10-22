@@ -1,10 +1,17 @@
+import healhImage from "../public/categories/health1.jpg";
+import techImage from "../public/categories/tech1.jpg";
+import newsImage from "../public/categories/news1.jpg";
+import selfDevelopmentImage from "../public/categories/self-development1.jpg";
+import travelImage from "../public/categories/travel1.jpg";
+import trendsImage from "../public/categories/trends1.jpg";
+
 export default function App() {
   return (
     <div className="container mx-auto">
-      <div className="underline text-2xl text-gray-700 mt-20 mb-6">
+      {/* <div className="underline text-2xl text-gray-700 mt-20 mb-6">
         Categories
-      </div>
-      <section className="mb-20 text-gray-800">
+      </div> */}
+      <section className="mb-16 text-gray-800">
         <div className="grid lg:grid-cols-3 gap-6">
           <div
             className="zoom shadow-lg relative overflow-hidden bg-no-repeat bg-cover"
@@ -13,7 +20,7 @@ export default function App() {
             data-mdb-ripple-color="dark"
           >
             <img
-              src="https://mdbootstrap.com/img/new/standard/city/041.jpg"
+              src={selfDevelopmentImage}
               className="w-full transition duration-300 ease-linear align-middle"
             />
             <a href="#!">
@@ -23,7 +30,7 @@ export default function App() {
               >
                 <div className="flex justify-start items-end h-full">
                   <h5 className="text-lg font-bold text-white m-6">
-                    Hollywood exhibition
+                    Self Development
                   </h5>
                 </div>
               </div>
@@ -43,7 +50,7 @@ export default function App() {
             data-mdb-ripple-color="dark"
           >
             <img
-              src="https://mdbootstrap.com/img/new/standard/city/044.jpg"
+              src={techImage}
               className="w-full transition duration-300 ease-linear align-middle"
             />
             <a href="#!">
@@ -53,7 +60,7 @@ export default function App() {
               >
                 <div className="flex justify-start items-end h-full">
                   <h5 className="text-lg font-bold text-white m-6">
-                    Genius Loci
+                    Technology
                   </h5>
                 </div>
               </div>
@@ -73,7 +80,7 @@ export default function App() {
             data-mdb-ripple-color="dark"
           >
             <img
-              src="https://mdbootstrap.com/img/new/standard/city/045.jpg"
+              src={healhImage}
               className="w-full transition duration-300 ease-linear align-middle"
             />
             <a href="#!">
@@ -82,9 +89,7 @@ export default function App() {
                 style={{ backgroundColor: "rgba(0, 0, 0, 0.3)" }}
               >
                 <div className="flex justify-start items-end h-full">
-                  <h5 className="text-lg font-bold text-white m-6">
-                    Big Apple
-                  </h5>
+                  <h5 className="text-lg font-bold text-white m-6">Health</h5>
                 </div>
               </div>
               <div className="hover-overlay">
@@ -103,7 +108,7 @@ export default function App() {
             data-mdb-ripple-color="dark"
           >
             <img
-              src="https://mdbootstrap.com/img/new/standard/city/047.jpg"
+              src={newsImage}
               className="w-full transition duration-300 ease-linear align-middle"
             />
             <a href="#!">
@@ -112,7 +117,7 @@ export default function App() {
                 style={{ backgroundColor: "rgba(0, 0, 0, 0.3)" }}
               >
                 <div className="flex justify-start items-end h-full">
-                  <h5 className="text-lg font-bold text-white m-6">Sun City</h5>
+                  <h5 className="text-lg font-bold text-white m-6">News</h5>
                 </div>
               </div>
               <div className="hover-overlay">
@@ -131,7 +136,7 @@ export default function App() {
             data-mdb-ripple-color="dark"
           >
             <img
-              src="https://mdbootstrap.com/img/new/standard/city/048.jpg"
+              src={travelImage}
               className="w-full transition duration-300 ease-linear align-middle"
             />
             <a href="#!">
@@ -140,9 +145,7 @@ export default function App() {
                 style={{ backgroundColor: "rgba(0, 0, 0, 0.3)" }}
               >
                 <div className="flex justify-start items-end h-full">
-                  <h5 className="text-lg font-bold text-white m-6">
-                    Paris flavor
-                  </h5>
+                  <h5 className="text-lg font-bold text-white m-6">Travel</h5>
                 </div>
               </div>
               <div className="hover-overlay">
@@ -161,7 +164,7 @@ export default function App() {
             data-mdb-ripple-color="dark"
           >
             <img
-              src="https://mdbootstrap.com/img/new/standard/city/049.jpg"
+              src={trendsImage}
               className="w-full transition duration-300 ease-linear align-middle"
             />
             <a href="#!">
@@ -170,9 +173,7 @@ export default function App() {
                 style={{ backgroundColor: "rgba(0, 0, 0, 0.3)" }}
               >
                 <div className="flex justify-start items-end h-full">
-                  <h5 className="text-lg font-bold text-white m-6">
-                    Sky is the limit
-                  </h5>
+                  <h5 className="text-lg font-bold text-white m-6">Trends</h5>
                 </div>
               </div>
               <div className="hover-overlay">
