@@ -23,6 +23,7 @@ export default function App() {
             data-mdb-ripple-color="dark"
           >
             <Image
+              alt="categories image self development"
               src={selfDevelopmentImage}
               className="w-full transition duration-300 ease-linear align-middle"
               layout="fill"
@@ -54,6 +55,7 @@ export default function App() {
             data-mdb-ripple-color="dark"
           >
             <Image
+              alt="categories image technology"
               src={techImage}
               className="w-full transition duration-300 ease-linear align-middle"
               layout="fill"
@@ -85,6 +87,7 @@ export default function App() {
             data-mdb-ripple-color="dark"
           >
             <Image
+              alt="categories image health"
               src={healhImage}
               className="w-full transition duration-300 ease-linear align-middle"
             />
@@ -113,6 +116,7 @@ export default function App() {
             data-mdb-ripple-color="dark"
           >
             <Image
+              alt="categories image news"
               src={newsImage}
               className="w-full transition duration-300 ease-linear align-middle"
               layout="fill"
@@ -142,6 +146,7 @@ export default function App() {
             data-mdb-ripple-color="dark"
           >
             <Image
+              alt="categories image travel"
               src={travelImage}
               className="w-full transition duration-300 ease-linear align-middle"
               layout="fill"
@@ -173,6 +178,7 @@ export default function App() {
                 data-mdb-ripple-color="dark"
               >
                 <Image
+                  alt="categories image trends"
                   src={trendsImage}
                   className="w-full transition duration-300 ease-linear align-middle"
                 />
