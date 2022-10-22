@@ -32,9 +32,8 @@ export default function Index({ posts }: any) {
       <div className="md:mt-14 container mx-auto lg:mb-16 pt-12">
         <Hero />
       </div>
-      <Categories />
-      <div className="container max-w-6xl underline-offset-2 underline p-6 mx-auto text-2xl text-gray-700">
-        Featured Post
+      <div className="hidden lg:block">
+        <Categories />
       </div>
       <Home posts={posts} />
     </>
