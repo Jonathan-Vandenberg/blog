@@ -120,6 +120,9 @@ export const getPostDetails = async (slug) => {
         author {
           name
           biography
+          picture {
+            url
+          }
         }
         createdAt
         slug
