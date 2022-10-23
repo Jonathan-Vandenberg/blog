@@ -1,12 +1,11 @@
 import Head from "next/head";
 import Categories from "../components/Categories";
 import Hero from "../components/Hero";
-import Home from "../components/Home";
 import { getPosts } from "../services";
+import Button from "../components/Button";
+import Card from "../components/Card";
+import FeaturedPosts from "../components/FeaturedPost";
 
-{
-  /* // <PostCard key={index} post={post.node} /> */
-}
 export default function Index({ posts }: any) {
   return (
     <>
@@ -35,7 +34,25 @@ export default function Index({ posts }: any) {
       <div className="hidden lg:block">
         <Categories />
       </div>
-      <Home posts={posts} />
+      <section>
+        <div className="container max-w-6xl font-semibold mx-auto text-2xl pt-12 pb-2 px-6 text-gray-600">
+          Featured Posts
+        </div>
+        <div className="container max-w-6xl px-6 mx-auto space-y-6 sm:space-y-12">
+          <FeaturedPosts />
+          <div className="">
+            <div className="text-2xl text-gray-600 font-semibold mb-2">
+              All Posts
+            </div>
+            <div className="grid justify-center grid-cols-1 gap-6 sm:grid-cols-2 lg:grid-cols-3">
+              {posts.map((post: { node: any }, index: any) => (
+                <Card key={index} post={post.node} blogCard={true} />
+              ))}
+            </div>
+          </div>
+          <Button content="Load more posts..." />
+        </div>
+      </section>
     </>
   );
 }

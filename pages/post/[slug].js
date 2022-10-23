@@ -71,17 +71,22 @@ const PostDetails = ({ post }) => {
                     <strong className="text-xl">{children}</strong>
                   ),
                   ol: ({ children }) => (
-                    <ol className="py-4 ml-12 text-gray-800 list-decimal text-xl">
+                    <ol className="py-4 space-y-3 ml-12 text-gray-800 list-decimal text-xl">
                       {children}
                     </ol>
                   ),
                   ul: ({ children }) => (
-                    <ul className="py-4 ml-12 text-gray-800 list-disc text-xl">
+                    <ul className="py-4 space-y-3 ml-12 text-gray-800 list-disc text-xl ">
                       {children}
                     </ul>
                   ),
                   p: ({ children }) => (
                     <p className="py-4 text-gray-800 text-xl">{children}</p>
+                  ),
+                  a: ({ children }) => (
+                    <a className="py-4 text-purple-600 text-xl hover:underline-offset-4 hover:text-purple-500 underline underline-offset-2 cursor-pointer">
+                      {children}
+                    </a>
                   ),
                   blockquote: ({ children }) => (
                     <blockquote className="py-4 my-6 text-gray-800 text-xl border-l-[6px] pl-3 border-gray-400">

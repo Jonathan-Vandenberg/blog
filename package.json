@@ -15,6 +15,11 @@
     "@graphql-codegen/cli": "^2.8.0",
     "@graphql-yoga/node": "2.13.13",
     "@prisma/client": "^4.4.0",
+    "@splinetool/loader": "0.9.103",
+    "@splinetool/r3f-spline": "1.0.1",
+    "@splinetool/react-spline": "2.2.1",
+    "@splinetool/runtime": "0.9.103",
+    "framer-motion": "^7.6.1",
     "graphql": "^16.6.0",
     "graphql-request": "^5.0.0",
     "he": "^1.2.0",
@@ -23,10 +28,6 @@
     "next-mdx-remote": "^4.1.0",
     "react": "18.2.0",
     "react-dom": "18.2.0",
-    "@splinetool/loader": "0.9.103",
-    "@splinetool/r3f-spline": "1.0.1",
-    "@splinetool/react-spline": "2.2.1",
-    "@splinetool/runtime": "0.9.103",
     "three": "0.143.0"
   },
   "devDependencies": {

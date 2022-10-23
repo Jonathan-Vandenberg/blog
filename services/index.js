@@ -2,43 +2,6 @@ import { request, gql } from "graphql-request";
 
 const graphqlAPI = process.env.NEXT_PUBLIC_GRAPHCMS_ENDPOINT;
 
-// import { GraphQLClient } from "graphql-request";
-
-// const hygraph = new GraphQLClient(process.env.NEXT_PUBLIC_GRAPHCMS_ENDPOINT);
-
-// export const getPosts = async () => {
-//   const { posts } = await hygraph.request(
-//     `
-//     query GetPosts {
-//       postsConnection {
-//         edges {
-//           cursor
-//           node {
-//             author {
-//               biography
-//               name
-//               id
-//             }
-//             category
-//             createdAt
-//             slug
-//             title
-//             excerpt
-//             coverImage {
-//               url
-//             }
-//           }
-//         }
-//       }
-//     }
-//   `
-//   );
-
-//   return {
-//     posts,
-//   };
-// };
-
 export const getPosts = async () => {
   const query = gql`
     query MyQuery {
@@ -70,42 +33,73 @@ export const getPosts = async () => {
   return result.postsConnection.edges;
 };
 
-// export const getSimilarPost = async (category, slug) => {
-//   const { similarPosts } = await hygraph.request(
-//     `
-//     query posts(where: { slug_not: $slug, AND: { category: $category } }) {
-//         category
-//         content {
-//           raw
-//         }
-//         coverImage {
-//           url
-//         }
-//         seo {
-//           description
-//           title
-//         }
-//         slug
-//         title
-//         author {
-//           biography
-//           name
-//           picture {
-//             url
-//           }
-//         }
-//     }
-//   `,
-//     {
-//       slug,
-//       category,
-//     }
-//   );
+export const getFeaturedPosts = async () => {
+  const query = gql`
+    query MyQuery {
+      posts(where: { featuredOnHomePage: true }) {
+        author {
+          biography
+          name
+          picture {
+            url
+          }
+        }
+        category
+        content {
+          raw
+        }
+        coverImage {
+          url
+        }
+        createdAt
+        excerpt
+        seo {
+          description
+          title
+        }
+        slug
+        title
+      }
+    }
+  `;
+  const result = await request(graphqlAPI, query);
 
-//   return {
-//     similarPosts,
-//   };
-// };
+  return result.posts;
+};
+
+export const getFeaturedPostsByCategory = async (category) => {
+  const query = gql`
+    query MyQuery($category: Category!) {
+      posts(where: { featured: true, AND: { category: $category } }) {
+        author {
+          biography
+          name
+          picture {
+            url
+          }
+        }
+        category
+        content {
+          raw
+        }
+        coverImage {
+          url
+        }
+        createdAt
+        excerpt
+        seo {
+          description
+          title
+        }
+        slug
+        title
+      }
+    }
+  `;
+  const result = await request(graphqlAPI, query, { category });
+
+  return result.posts;
+};
 
 export const getPostDetails = async (slug) => {
   const query = gql`
@@ -185,7 +179,9 @@ export const getSimilarPosts = async (category, slug) => {
 export const getSelfDevelopmentPosts = async () => {
   const query = gql`
     query MyQuery {
-      postsConnection(where: { category: SELF_DEVELOPMENT }) {
+      postsConnection(
+        where: { category: SELF_DEVELOPMENT, AND: { featured: false } }
+      ) {
         edges {
           node {
             content {
@@ -218,7 +214,7 @@ export const getSelfDevelopmentPosts = async () => {
 export const getHealthPosts = async () => {
   const query = gql`
     query MyQuery {
-      postsConnection(where: { category: HEALTH }) {
+      postsConnection(where: { category: HEALTH, AND: { featured: false } }) {
         edges {
           node {
             content {
@@ -251,7 +247,7 @@ export const getHealthPosts = async () => {
 export const getTrendsPosts = async () => {
   const query = gql`
     query MyQuery {
-      postsConnection(where: { category: TRENDS }) {
+      postsConnection(where: { category: TRENDS, AND: { featured: false } }) {
         edges {
           node {
             content {
@@ -284,7 +280,7 @@ export const getTrendsPosts = async () => {
 export const getTravelPosts = async () => {
   const query = gql`
     query MyQuery {
-      postsConnection(where: { category: TRAVEL }) {
+      postsConnection(where: { category: TRAVEL, AND: { featured: false } }) {
         edges {
           node {
             content {
@@ -317,7 +313,7 @@ export const getTravelPosts = async () => {
 export const getTechnologyPosts = async () => {
   const query = gql`
     query MyQuery {
-      postsConnection(where: { category: TECH }) {
+      postsConnection(where: { category: TECH, AND: { featured: false } }) {
         edges {
           node {
             content {
@@ -350,7 +346,7 @@ export const getTechnologyPosts = async () => {
 export const getNewsPosts = async () => {
   const query = gql`
     query MyQuery {
-      postsConnection(where: { category: NEWS }) {
+      postsConnection(where: { category: NEWS, AND: { featured: false } }) {
         edges {
           node {
             content {
