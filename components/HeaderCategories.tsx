@@ -41,10 +41,10 @@ export default function App({
         </div>
         <div className="p-6 z-10 pb-6 m-4 mx-auto -mt-12 lg:max-w-2xl sm:px-10 sm:mx-12 lg:rounded-md bg-gray-900">
           <div className="flex items-start justify-center flex-col">
-            <p className="inline-block text-2xl font-semibold sm:text-3xl">
+            <p className="inline-block text-2xl font-semibold sm:text-3xl text-gray-100">
               {categoryName}
             </p>
-            <div className="text-gray-100">
+            <div className="text-gray-200">
               <p>{categoryDescription}</p>
             </div>
           </div>
