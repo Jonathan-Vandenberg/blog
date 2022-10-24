@@ -12,7 +12,7 @@ export default function App({ content, post }: any) {
         <h1 className="text-4xl font-bold leading-tight md:text-5xl">
           {post.title}
         </h1>
-        <p className="text-sm dark:text-gray-400 mt-2">
+        <p className="text-sm text-gray-600 mt-2">
           by
           <a
             rel="noopener noreferrer"

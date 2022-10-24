@@ -97,7 +97,7 @@ const PostDetails = ({ post }) => {
                     </blockquote>
                   ),
                   img: ({ src, title, height, width }) => (
-                    <div className="block h-auto mx-auto my-3">
+                    <div className="block h-auto mx-auto my-3 md:container">
                       <Image
                         src={src}
                         alt={title}
