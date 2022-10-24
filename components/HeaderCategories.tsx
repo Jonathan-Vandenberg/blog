@@ -6,7 +6,7 @@ import travelImage from "../public/categories/travel1.jpg";
 import trendsImage from "../public/categories/trends1.jpg";
 
 import Image from "next/image";
-import { useEffect, useState } from "react";
+// import { useEffect, useState } from "react";
 
 export default function App({
   categoryName,
@@ -15,49 +15,49 @@ export default function App({
   categoryName: string;
   categoryDescription: string;
 }) {
-  const [style, setStyle] = useState("");
+  // const [style, setStyle] = useState("");
 
-  useEffect(() => {
-    headerColor();
-  }, []);
+  // useEffect(() => {
+  //   headerColor();
+  // }, []);
 
-  const headerColor = () => {
-    switch (categoryName) {
-      case "Self Development":
-        setStyle(
-          "p-5 mx-auto sm:p-10 bg-gradient-to-tr from-sky-500 via-sky-300 to-sky-500"
-        );
-        break;
-      case "Health":
-        setStyle(
-          "p-5 mx-auto sm:p-10 bg-gradient-to-l from-red-500 via-red-300 to-red-500"
-        );
-        break;
-      case "Travel":
-        setStyle(
-          "p-5 mx-auto sm:p-10 bg-gradient-to-tr from-sky-200 via-sky-50 to-sky-200"
-        );
-        break;
-      case "News":
-        setStyle(
-          "p-5 mx-auto sm:p-10 bg-gradient-to-tr from-gray-500 via-gray-300 to-gray-500"
-        );
-        break;
-      case "Technology":
-        setStyle(
-          "p-5 mx-auto sm:p-10 bg-gradient-to-tr from-sky-500 via-sky-300 to-sky-500"
-        );
-        break;
-      case "Trends":
-        setStyle(
-          "p-5 mx-auto sm:p-10 bg-gradient-to-tr from-yellow-400 via-yellow-300 to-yellow-400"
-        );
-        break;
-    }
-  };
+  // const headerColor = () => {
+  //   switch (categoryName) {
+  //     case "Self Development":
+  //       setStyle(
+  //         "p-5 mx-auto sm:p-10 bg-gradient-to-tr from-sky-500 via-sky-300 to-sky-500"
+  //       );
+  //       break;
+  //     case "Health":
+  //       setStyle(
+  //         "p-5 mx-auto sm:p-10 bg-gradient-to-l from-red-500 via-red-300 to-red-500"
+  //       );
+  //       break;
+  //     case "Travel":
+  //       setStyle(
+  //         "p-5 mx-auto sm:p-10 bg-gradient-to-tr from-sky-200 via-sky-50 to-sky-200"
+  //       );
+  //       break;
+  //     case "News":
+  //       setStyle(
+  //         "p-5 mx-auto sm:p-10 bg-gradient-to-tr from-gray-500 via-gray-300 to-gray-500"
+  //       );
+  //       break;
+  //     case "Technology":
+  //       setStyle(
+  //         "p-5 mx-auto sm:p-10 bg-gradient-to-tr from-sky-500 via-sky-300 to-sky-500"
+  //       );
+  //       break;
+  //     case "Trends":
+  //       setStyle(
+  //         "p-5 mx-auto sm:p-10 bg-gradient-to-tr from-yellow-400 via-yellow-300 to-yellow-400"
+  //       );
+  //       break;
+  //   }
+  // };
 
   return (
-    <div className={style}>
+    <div className="p-5 mx-auto sm:p-10 bg-gradient-to-tr from-sky-500 via-sky-300 to-sky-500">
       <div className="flex flex-col max-w-md mx-auto overflow-hidden rounded">
         <div className="block w-full mx-auto mt-16">
           <Image
