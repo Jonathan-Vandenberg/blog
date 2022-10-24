@@ -1,4 +1,5 @@
 import React from "react";
+import Image from "next/image";
 
 import moment from "moment";
 
@@ -75,13 +76,16 @@ const PostDetail = ({ post }) => {
         );
       case "image":
         return (
-          <img
-            key={index}
-            alt={obj.title}
-            height={obj.height}
-            width={obj.width}
-            src={obj.src}
-          />
+          <div className="block">
+            <Image
+              key={index}
+              alt={obj.title}
+              height={obj.height}
+              width={obj.width}
+              layout="responsive"
+              src={obj.src}
+            />
+          </div>
         );
       default:
         return modifiedText;
@@ -92,7 +96,7 @@ const PostDetail = ({ post }) => {
     <>
       <div className="bg-white shadow-lg rounded-lg lg:p-8 pb-12 mb-8">
         <div className="relative overflow-hidden shadow-md mb-6">
-          <img
+          <Image
             src={post.coverImage.url}
             alt=""
             className="object-top h-full w-full object-cover  shadow-lg rounded-t-lg lg:rounded-lg"

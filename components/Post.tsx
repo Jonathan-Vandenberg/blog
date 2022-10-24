@@ -1,4 +1,5 @@
 import moment from "moment";
+import Image from "next/image";
 
 export default function App({ content, post }: any) {
   return (
@@ -30,11 +31,16 @@ export default function App({ content, post }: any) {
       <div className="text-gray-500">{content}</div>
       <div className="pt-12 pb-6 border-y dark:border-gray-700">
         <div className="flex flex-col space-y-4 md:space-y-0 md:space-x-6 md:flex-row">
-          <img
-            src={post.author.picture.url}
-            alt={"Author's image"}
-            className="self-center flex-shrink-0 w-24 h-24 border rounded-full md:justify-self-start dark:bg-gray-500 dark:border-gray-700"
-          />
+          <div className="self-center block flex-shrink-0 w-24 h-24 border rounded-full md:justify-self-start bg-gray-500 border-gray-700">
+            <Image
+              src={post.author.picture.url}
+              layout="responsive"
+              alt={"Author's image"}
+              width={100}
+              height={100}
+              className="rounded-full"
+            />
+          </div>
           <div className="flex flex-col">
             <h4 className="text-lg font-semibold">{post.author.name}</h4>
             <p className="dark:text-gray-400">{post.author.biography}</p>
