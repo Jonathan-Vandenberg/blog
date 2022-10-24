@@ -178,9 +178,10 @@ export const getSimilarPosts = async (category, slug) => {
 
 export const getSelfDevelopmentPosts = async () => {
   const query = gql`
-    query MyQuery {
+    query MyQuery() {
       postsConnection(
         where: { category: SELF_DEVELOPMENT, AND: { featured: false } }
+        orderBy: createdAt_DESC
       ) {
         edges {
           node {
@@ -190,9 +191,11 @@ export const getSelfDevelopmentPosts = async () => {
             coverImage {
               url
             }
+            category
             createdAt
             excerpt
             slug
+            id
             title
             author {
               biography
@@ -223,6 +226,7 @@ export const getHealthPosts = async () => {
             coverImage {
               url
             }
+            category
             createdAt
             excerpt
             slug
@@ -256,6 +260,7 @@ export const getTrendsPosts = async () => {
             coverImage {
               url
             }
+            category
             createdAt
             excerpt
             slug
@@ -289,6 +294,7 @@ export const getTravelPosts = async () => {
             coverImage {
               url
             }
+            category
             createdAt
             excerpt
             slug
@@ -322,6 +328,7 @@ export const getTechnologyPosts = async () => {
             coverImage {
               url
             }
+            category
             createdAt
             excerpt
             slug
@@ -355,6 +362,7 @@ export const getNewsPosts = async () => {
             coverImage {
               url
             }
+            category
             createdAt
             excerpt
             slug

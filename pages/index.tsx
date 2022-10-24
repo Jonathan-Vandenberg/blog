@@ -3,7 +3,7 @@ import Categories from "../components/Categories";
 import Hero from "../components/Hero";
 import { getPosts } from "../services";
 import Button from "../components/Button";
-import Card from "../components/Card";
+import Card from "../components/AllPostsCard";
 import FeaturedPosts from "../components/FeaturedPost";
 
 export default function Index({ posts }: any) {

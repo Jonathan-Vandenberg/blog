@@ -20,7 +20,7 @@ export default function App({ post }: any) {
           </a>
         </Link>
       )}
-      <div className="p-6 space-y-2">
+      <div className="p-6 space-y-2 bg-sky-50">
         <Link href={`/post/${post.slug}`}>
           <a>
             <h3 className="text-2xl font-semibold group-hover:underline group-focus:underline text-black">

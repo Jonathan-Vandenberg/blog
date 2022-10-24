@@ -1,6 +1,6 @@
 import Head from "next/head";
 import Button from "../../components/Button";
-import Card from "../../components/Card";
+import Card from "../../components/AllPostsCard";
 import FeaturedPostsByCategory from "../../components/FeaturedPostsByCategory";
 import HeaderCategories from "../../components/HeaderCategories";
 import { getHealthPosts } from "../../services";
