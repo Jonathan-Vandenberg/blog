@@ -4,7 +4,7 @@ export default function App({ content }: { content: string }) {
   const controls = useAnimationControls();
 
   function clickAnimation() {
-    controls.start({ x: 120 });
+    controls.start({ x: 115 });
   }
 
   return (

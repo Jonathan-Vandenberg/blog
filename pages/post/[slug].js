@@ -83,8 +83,11 @@ const PostDetails = ({ post }) => {
                   p: ({ children }) => (
                     <p className="py-4 text-gray-800 text-xl">{children}</p>
                   ),
-                  a: ({ children }) => (
-                    <a className="py-4 text-purple-600 text-xl hover:underline-offset-4 hover:text-purple-500 underline underline-offset-2 cursor-pointer">
+                  a: ({ children, href }) => (
+                    <a
+                      href={href}
+                      className="py-4 text-purple-600 text-xl hover:underline-offset-4 hover:text-purple-500 underline underline-offset-2 cursor-pointer"
+                    >
                       {children}
                     </a>
                   ),
