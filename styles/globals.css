@@ -30,14 +30,65 @@ a {
   box-sizing: border-box;
 }
 
-@media (prefers-color-scheme: dark) {
-  html {
-    color-scheme: light;
+/* ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ */
+
+.image-description {
+  margin-top: -1rem;
+  font-size: 0.9rem;
+  color: rgb(100, 100, 100);
+}
+
+.image-author {
+  font-size: 0.7rem;
+  padding-bottom: 1rem;
+  font-style: italic;
+  color: rgb(100, 100, 100);
+}
+
+.regular {
+  padding-top: 0.5rem;
+  padding-bottom: 0.5rem;
+  font-size: 1.2rem;
+}
+
+@media only screen and (max-width: 767px) {
+  .image-description {
+    margin-top: -1rem;
+    font-size: 0.8rem;
+    color: rgb(100, 100, 100);
   }
-  body {
-    color: white;
-    background: white;
+
+  .image-author {
+    font-size: 0.7rem;
+    padding-bottom: 1rem;
+    font-style: italic;
+    color: rgb(100, 100, 100);
+  }
+
+  .regular {
+    padding-top: 0.5rem;
+    padding-bottom: 0.5rem;
+    font-size: 1.1rem;
   }
 }
 
-/* ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ */
+@media only screen and (max-width: 600px) {
+  .image-description {
+    margin-top: -1rem;
+    font-size: 0.7rem;
+    color: rgb(100, 100, 100);
+  }
+
+  .image-author {
+    font-size: 0.6rem;
+    padding-bottom: 1rem;
+    font-style: italic;
+    color: rgb(100, 100, 100);
+  }
+
+  .regular {
+    padding-top: 0.5rem;
+    padding-bottom: 0.5rem;
+    font-size: 1rem;
+  }
+}

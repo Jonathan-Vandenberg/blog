@@ -5,8 +5,17 @@ import { getPosts } from "../services";
 import Button from "../components/Button";
 import Card from "../components/AllPostsCard";
 import FeaturedPosts from "../components/FeaturedPost";
+import { useState } from "react";
 
 export default function Index({ posts }: any) {
+  const [addPosts, setAddPosts] = useState(6);
+  const [disableButton, setDisableButton] = useState(false);
+  const addMorePosts = () => {
+    if (posts.length > addPosts) {
+      setAddPosts(addPosts + 6);
+    } else setDisableButton(true);
+  };
+
   return (
     <>
       <Head>
@@ -35,22 +44,28 @@ export default function Index({ posts }: any) {
         <Categories />
       </div>
       <section>
-        <div className="container max-w-6xl font-semibold mx-auto text-2xl pt-12 pb-2 px-6 text-gray-600">
+        <p className="container max-w-6xl font-semibold mx-auto text-2xl pt-12 pb-2 px-6 text-gray-600">
           Featured Posts
-        </div>
+        </p>
         <div className="container max-w-6xl px-6 mx-auto space-y-6 sm:space-y-12">
           <FeaturedPosts />
           <div className="">
-            <div className="text-2xl text-gray-600 font-semibold mb-2">
+            <p className="text-2xl text-gray-600 font-semibold mb-2">
               All Posts
-            </div>
+            </p>
             <div className="grid justify-center grid-cols-1 gap-6 sm:grid-cols-2 lg:grid-cols-3">
-              {posts.map((post: { node: any }, index: any) => (
-                <Card key={index} post={post.node} blogCard={true} />
-              ))}
+              {posts
+                .map((post: { node: any }, index: any) => (
+                  <Card key={index} post={post.node} blogCard={true} />
+                ))
+                .slice(0, addPosts)}
             </div>
           </div>
-          <Button content="Load more posts..." />
+          <Button
+            content="Load more posts..."
+            handleAddMorePosts={addMorePosts}
+            disable={disableButton}
+          />
         </div>
       </section>
     </>

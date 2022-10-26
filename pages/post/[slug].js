@@ -6,6 +6,7 @@ import React from "react";
 import Post from "../../components/Post";
 import BreadCrumbs from "../../components/BreadCrumbs.tsx";
 import RelatedPosts from "../../components/RelatedPosts.tsx";
+import Link from "next/link";
 
 import { getPostDetails, getPosts } from "../../services";
 
@@ -80,24 +81,26 @@ const PostDetails = ({ post }) => {
                       {children}
                     </ul>
                   ),
-                  p: ({ children }) => (
-                    <p className="py-4 text-gray-800 text-xl">{children}</p>
+                  p: ({ children, className }) => (
+                    <p className={className}>{children}</p>
                   ),
-                  a: ({ children, href }) => (
-                    <a
-                      href={href}
-                      className="py-4 text-purple-600 text-xl hover:underline-offset-4 hover:text-purple-500 underline underline-offset-2 cursor-pointer"
-                    >
-                      {children}
-                    </a>
+                  a: ({ children, href, title }) => (
+                    <Link href={href}>
+                      <a
+                        aria-label={title}
+                        className="py-4 text-purple-600 text-xl hover:underline-offset-4 hover:text-purple-500 underline underline-offset-2 cursor-pointer"
+                      >
+                        {children}
+                      </a>
+                    </Link>
                   ),
                   blockquote: ({ children }) => (
-                    <blockquote className="py-4 my-6 text-gray-800 text-xl border-l-[6px] pl-3 border-gray-400">
+                    <blockquote className="py-4 my-6 text-gray-800 text-xl border-l-[6px] pl-3 border-gray-300">
                       <p>{children}</p>
                     </blockquote>
                   ),
                   img: ({ src, title, height, width }) => (
-                    <div className="block h-auto mx-auto my-3 md:container">
+                    <div className="block h-auto mx-auto my-3">
                       <Image
                         src={src}
                         alt={title}

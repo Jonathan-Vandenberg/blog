@@ -4,8 +4,17 @@ import Card from "../../components/AllPostsCard";
 import FeaturedPostsByCategory from "../../components/FeaturedPostsByCategory";
 import HeaderCategories from "../../components/HeaderCategories";
 import { getSelfDevelopmentPosts } from "../../services";
+import { useState } from "react";
 
 export default function Index({ posts }: any) {
+  const [addPosts, setAddPosts] = useState(6);
+  const [disableButton, setDisableButton] = useState(false);
+  const addMorePosts = () => {
+    if (posts.length > addPosts) {
+      setAddPosts(addPosts + 6);
+    } else setDisableButton(true);
+  };
+
   return (
     <>
       <Head>
@@ -42,12 +51,18 @@ export default function Index({ posts }: any) {
               All Posts
             </div>
             <div className="grid justify-center grid-cols-1 gap-6 sm:grid-cols-2 lg:grid-cols-3">
-              {posts.map((post: { node: any }, index: any) => (
-                <Card key={index} post={post.node} blogCard={true} />
-              ))}
+              {posts
+                .map((post: any, index: any) => (
+                  <Card key={index} post={post.node} blogCard={true} />
+                ))
+                .slice(0, addPosts)}
             </div>
           </div>
-          <Button content="Load more posts..." />
+          <Button
+            content="More #Self-Development Posts"
+            handleAddMorePosts={addMorePosts}
+            disable={disableButton}
+          />
         </div>
       </section>
     </>

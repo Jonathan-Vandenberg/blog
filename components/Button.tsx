@@ -1,6 +1,14 @@
 import { motion, useAnimationControls } from "framer-motion";
 
-export default function App({ content }: { content: string }) {
+export default function App({
+  content,
+  handleAddMorePosts,
+  disable,
+}: {
+  content: string;
+  handleAddMorePosts: () => void;
+  disable: boolean;
+}) {
   const controls = useAnimationControls();
 
   function clickAnimation() {
@@ -11,16 +19,22 @@ export default function App({ content }: { content: string }) {
     <div className="flex justify-center">
       <button
         type="button"
-        className="px-6 py-3 relative text-sm border-2 border-gray-600 font-semibold text-gray-700"
+        className={`px-6 py-3 relative text-sm border-2 font-semibold ${
+          disable
+            ? "text-gray-300 border-gray-300"
+            : "text - gray - 700 border-gray-600"
+        }`}
         onClick={() => {
           clickAnimation();
+          handleAddMorePosts();
         }}
+        disabled={disable}
       >
         <motion.span
           animate={controls}
           initial={{ x: 0 }}
           transition={{
-            repeat: 3,
+            repeat: 1,
             repeatType: "reverse",
             duration: 1,
           }}
@@ -30,7 +44,7 @@ export default function App({ content }: { content: string }) {
           animate={controls}
           initial={{ x: 0 }}
           transition={{
-            repeat: 3,
+            repeat: 1,
             repeatType: "reverse",
             duration: 1,
           }}

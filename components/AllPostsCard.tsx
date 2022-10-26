@@ -6,7 +6,7 @@ export default function App({ post }: any) {
     <a
       rel="noopener noreferrer"
       href="#"
-      className="max-w-sm mx-auto bg-gray-100 group hover:no-underline focus:no-underline"
+      className="max-w-sm mx-auto bg-sky-50 group hover:no-underline focus:no-underline"
     >
       {post?.coverImage?.url && (
         <Link href={`/post/${post.slug}`}>
@@ -20,7 +20,7 @@ export default function App({ post }: any) {
           </a>
         </Link>
       )}
-      <div className="p-6 space-y-2 bg-sky-50">
+      <div className="p-6 space-y-2">
         <Link href={`/post/${post.slug}`}>
           <a>
             <h3 className="text-2xl font-semibold group-hover:underline group-focus:underline text-black">

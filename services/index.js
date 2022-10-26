@@ -5,7 +5,7 @@ const graphqlAPI = process.env.NEXT_PUBLIC_GRAPHCMS_ENDPOINT;
 export const getPosts = async () => {
   const query = gql`
     query MyQuery {
-      postsConnection {
+      postsConnection(orderBy: createdAt_DESC) {
         edges {
           cursor
           node {
@@ -178,7 +178,7 @@ export const getSimilarPosts = async (category, slug) => {
 
 export const getSelfDevelopmentPosts = async () => {
   const query = gql`
-    query MyQuery() {
+    query MyQuery {
       postsConnection(
         where: { category: SELF_DEVELOPMENT, AND: { featured: false } }
         orderBy: createdAt_DESC
