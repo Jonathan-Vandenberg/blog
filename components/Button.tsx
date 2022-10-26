@@ -1,4 +1,5 @@
 import { motion, useAnimationControls } from "framer-motion";
+import { useEffect, useState } from "react";
 
 export default function App({
   content,
@@ -9,10 +10,22 @@ export default function App({
   handleAddMorePosts: () => void;
   disable: boolean;
 }) {
+  const [text, setText] = useState("");
+
+  useEffect(() => {
+    setText(content);
+  }, []);
+
   const controls = useAnimationControls();
 
   function clickAnimation() {
     controls.start({ x: 115 });
+  }
+
+  if (disable) {
+    setTimeout(() => {
+      setText("No more posts...");
+    }, 2000);
   }
 
   return (
@@ -50,7 +63,7 @@ export default function App({
           }}
           className="absolute -top-1 left-8 z-10 bg-white w-2 h-2"
         />
-        {content}
+        {text}
       </button>
     </div>
   );
