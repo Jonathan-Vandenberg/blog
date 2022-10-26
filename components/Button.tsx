@@ -25,7 +25,7 @@ export default function App({
   if (disable) {
     setTimeout(() => {
       setText("No more posts...");
-    }, 2000);
+    }, 1900);
   }
 
   return (
