@@ -16,9 +16,9 @@ const AuthBtn = () => {
         onClick={() => {
           signIn();
         }}
-        className="hover:bg-white hover:border hover:border-orange hover:text-orange rounded-full py-1 px-4 bg-orange text-lg text-gray-100"
+        className="py-1 px-4 text-lg text-gray-700 border-2 border-gray-700"
       >
-        <p>Login</p>
+        <p>Admin</p>
       </button>
     );
   }
