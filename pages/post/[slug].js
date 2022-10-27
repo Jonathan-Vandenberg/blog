@@ -77,12 +77,18 @@ const PostDetails = ({ post }) => {
                     </ol>
                   ),
                   ul: ({ children }) => (
-                    <ul className="py-4 space-y-3 ml-12 text-gray-800 list-disc text-xl ">
+                    <ul className="py-1 md:py-2 lg:py-4 text-gray-700 text-[1.15rem] md:text-[1.2rem] lg:text-[1.3rem] space-y-3 md:space-y-4 lg:space-y-5 ml-12 list-disc ">
                       {children}
                     </ul>
                   ),
                   p: ({ children, className }) => (
-                    <p className={className}>{children}</p>
+                    <p
+                      className={
+                        "py-3 md:py-4 lg:py-5 text-gray-700 text-[1.15rem] md:text-[1.2rem] lg:text-[1.3rem]"
+                      }
+                    >
+                      {children}
+                    </p>
                   ),
                   a: ({ children, href, title }) => (
                     <Link href={href}>
@@ -95,7 +101,7 @@ const PostDetails = ({ post }) => {
                     </Link>
                   ),
                   blockquote: ({ children }) => (
-                    <blockquote className="py-4 my-6 text-gray-800 text-xl border-l-[6px] pl-3 border-gray-300">
+                    <blockquote className="my-6 py-2 text-gray-800 text-xl border-l-[6px] pl-3 border-gray-300">
                       <p>{children}</p>
                     </blockquote>
                   ),

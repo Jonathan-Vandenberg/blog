@@ -39,12 +39,6 @@ export default function App() {
           </div>
           <UserMessage />
         </div>
-        <a href="https://www.privacypolicies.com/live/1ba969c0-c522-4e56-87ae-91978300a6ac">
-          Privacy Policy
-        </a>
-        <a href="https://www.termsfeed.com/live/1ef4133a-bf10-455e-a991-4a1e4ca68ec5">
-          Terms of service
-        </a>
       </section>
     </>
   );

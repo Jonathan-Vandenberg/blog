@@ -45,11 +45,13 @@ a {
   color: rgb(100, 100, 100);
 }
 
-.regular {
+/* .regular {
   padding-top: 0.5rem;
   padding-bottom: 0.5rem;
-  font-size: 1.2rem;
-}
+  font-size: 1.25rem;
+  line-height: 1.75rem;
+  color: rgb(100, 100, 100);
+} */
 
 @media only screen and (max-width: 767px) {
   .image-description {
@@ -65,11 +67,11 @@ a {
     color: rgb(100, 100, 100);
   }
 
-  .regular {
+  /* .regular {
     padding-top: 0.5rem;
     padding-bottom: 0.5rem;
     font-size: 1.1rem;
-  }
+  } */
 }
 
 @media only screen and (max-width: 600px) {
@@ -86,9 +88,9 @@ a {
     color: rgb(100, 100, 100);
   }
 
-  .regular {
+  /* .regular {
     padding-top: 0.5rem;
     padding-bottom: 0.5rem;
     font-size: 1rem;
-  }
+  } */
 }

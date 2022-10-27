@@ -2,8 +2,6 @@ import { useState } from "react";
 import logo from "../public/alt.png";
 import Image from "next/image";
 import Link from "next/link";
-import BreadCrumbs from "./BreadCrumbs";
-import AuthBtn from "./AuthBtn";
 
 export default function App() {
   const [state, setState] = useState(false);
@@ -91,7 +89,6 @@ export default function App() {
                 </li>
               );
             })}
-            <AuthBtn />
           </ul>
         </div>
       </div>

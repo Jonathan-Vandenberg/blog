@@ -21,6 +21,7 @@ export default function App({ post }: any) {
         </Link>
       )}
       <div className="p-6 space-y-2">
+        <p>#{post.category}</p>
         <Link href={`/post/${post.slug}`}>
           <a>
             <h3 className="text-2xl font-semibold group-hover:underline group-focus:underline text-black">
