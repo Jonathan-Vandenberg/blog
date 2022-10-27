@@ -1,9 +1,9 @@
 type Query {
-  userMessages: [UserMessage]!
+  userMessages: [UserMessage]
 }
 
 type Mutation {
-  addUserMessage(input: UserMessageInput!): UserMessage!
+  addUserMessage(input: UserMessageInput!): UserMessage
 }
 
 type UserMessage {

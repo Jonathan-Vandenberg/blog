@@ -21,7 +21,7 @@ export type Scalars = {
 
 export type Mutation = {
   __typename?: 'Mutation';
-  addUserMessage: UserMessage;
+  addUserMessage?: Maybe<UserMessage>;
 };
 
 
@@ -31,7 +31,7 @@ export type MutationAddUserMessageArgs = {
 
 export type Query = {
   __typename?: 'Query';
-  userMessages: Array<Maybe<UserMessage>>;
+  userMessages?: Maybe<Array<Maybe<UserMessage>>>;
 };
 
 export type UserMessage = {
@@ -139,11 +139,11 @@ export type ResolversParentTypes = {
 };
 
 export type MutationResolvers<ContextType = GraphQLContext, ParentType extends ResolversParentTypes['Mutation'] = ResolversParentTypes['Mutation']> = {
-  addUserMessage?: Resolver<ResolversTypes['UserMessage'], ParentType, ContextType, RequireFields<MutationAddUserMessageArgs, 'input'>>;
+  addUserMessage?: Resolver<Maybe<ResolversTypes['UserMessage']>, ParentType, ContextType, RequireFields<MutationAddUserMessageArgs, 'input'>>;
 };
 
 export type QueryResolvers<ContextType = GraphQLContext, ParentType extends ResolversParentTypes['Query'] = ResolversParentTypes['Query']> = {
-  userMessages?: Resolver<Array<Maybe<ResolversTypes['UserMessage']>>, ParentType, ContextType>;
+  userMessages?: Resolver<Maybe<Array<Maybe<ResolversTypes['UserMessage']>>>, ParentType, ContextType>;
 };
 
 export type UserMessageResolvers<ContextType = GraphQLContext, ParentType extends ResolversParentTypes['UserMessage'] = ResolversParentTypes['UserMessage']> = {
@@ -241,11 +241,11 @@ export type AddUserMessageMutationVariables = Exact<{
 }>;
 
 
-export type AddUserMessageMutation = { __typename?: 'Mutation', addUserMessage: { __typename?: 'UserMessage', email: string, name: string, id: string, message: string } };
+export type AddUserMessageMutation = { __typename?: 'Mutation', addUserMessage?: { __typename?: 'UserMessage', email: string, name: string, id: string, message: string } | null };
 
 export type UserMessageFragment = { __typename?: 'UserMessage', email: string, name: string, id: string, message: string };
 
 export type UserMessagesQueryVariables = Exact<{ [key: string]: never; }>;
 
 
-export type UserMessagesQuery = { __typename?: 'Query', userMessages: Array<{ __typename?: 'UserMessage', email: string, name: string, id: string, message: string } | null> };
+export type UserMessagesQuery = { __typename?: 'Query', userMessages?: Array<{ __typename?: 'UserMessage', email: string, name: string, id: string, message: string } | null> | null };
