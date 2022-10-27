@@ -1,12 +1,15 @@
 import { GraphQLResolveInfo } from 'graphql';
-import { Post as PostModel } from '@prisma/client';
+import { UserMessage as UserMessageModel } from '@prisma/client';
 import { GraphQLContext } from './pages/api/index';
+import { gql } from '@apollo/client';
+import * as Apollo from '@apollo/client';
 export type Maybe<T> = T | null;
 export type InputMaybe<T> = Maybe<T>;
 export type Exact<T extends { [key: string]: unknown }> = { [K in keyof T]: T[K] };
 export type MakeOptional<T, K extends keyof T> = Omit<T, K> & { [SubKey in K]?: Maybe<T[SubKey]> };
 export type MakeMaybe<T, K extends keyof T> = Omit<T, K> & { [SubKey in K]: Maybe<T[SubKey]> };
 export type RequireFields<T, K extends keyof T> = Omit<T, K> & { [P in K]-?: NonNullable<T[P]> };
+const defaultOptions = {} as const;
 /** All built-in and custom scalars, mapped to their actual values */
 export type Scalars = {
   ID: string;
@@ -18,31 +21,32 @@ export type Scalars = {
 
 export type Mutation = {
   __typename?: 'Mutation';
-  addPost?: Maybe<Post>;
+  addUserMessage: UserMessage;
 };
 
 
-export type MutationAddPostArgs = {
-  input: PostInput;
-};
-
-export type Post = {
-  __typename?: 'Post';
-  id: Scalars['ID'];
-};
-
-export type PostInput = {
-  id: Scalars['ID'];
+export type MutationAddUserMessageArgs = {
+  input: UserMessageInput;
 };
 
 export type Query = {
   __typename?: 'Query';
-  post?: Maybe<Post>;
+  userMessages: Array<Maybe<UserMessage>>;
 };
 
-
-export type QueryPostArgs = {
+export type UserMessage = {
+  __typename?: 'UserMessage';
+  email: Scalars['String'];
   id: Scalars['ID'];
+  message: Scalars['String'];
+  name: Scalars['String'];
+};
+
+export type UserMessageInput = {
+  email: Scalars['String'];
+  id: Scalars['ID'];
+  message: Scalars['String'];
+  name: Scalars['String'];
 };
 
 
@@ -117,10 +121,10 @@ export type ResolversTypes = {
   Boolean: ResolverTypeWrapper<Scalars['Boolean']>;
   ID: ResolverTypeWrapper<Scalars['ID']>;
   Mutation: ResolverTypeWrapper<{}>;
-  Post: ResolverTypeWrapper<PostModel>;
-  PostInput: PostInput;
   Query: ResolverTypeWrapper<{}>;
   String: ResolverTypeWrapper<Scalars['String']>;
+  UserMessage: ResolverTypeWrapper<UserMessageModel>;
+  UserMessageInput: UserMessageInput;
 };
 
 /** Mapping between all available schema types and the resolvers parents */
@@ -128,28 +132,120 @@ export type ResolversParentTypes = {
   Boolean: Scalars['Boolean'];
   ID: Scalars['ID'];
   Mutation: {};
-  Post: PostModel;
-  PostInput: PostInput;
   Query: {};
   String: Scalars['String'];
+  UserMessage: UserMessageModel;
+  UserMessageInput: UserMessageInput;
 };
 
 export type MutationResolvers<ContextType = GraphQLContext, ParentType extends ResolversParentTypes['Mutation'] = ResolversParentTypes['Mutation']> = {
-  addPost?: Resolver<Maybe<ResolversTypes['Post']>, ParentType, ContextType, RequireFields<MutationAddPostArgs, 'input'>>;
-};
-
-export type PostResolvers<ContextType = GraphQLContext, ParentType extends ResolversParentTypes['Post'] = ResolversParentTypes['Post']> = {
-  id?: Resolver<ResolversTypes['ID'], ParentType, ContextType>;
-  __isTypeOf?: IsTypeOfResolverFn<ParentType, ContextType>;
+  addUserMessage?: Resolver<ResolversTypes['UserMessage'], ParentType, ContextType, RequireFields<MutationAddUserMessageArgs, 'input'>>;
 };
 
 export type QueryResolvers<ContextType = GraphQLContext, ParentType extends ResolversParentTypes['Query'] = ResolversParentTypes['Query']> = {
-  post?: Resolver<Maybe<ResolversTypes['Post']>, ParentType, ContextType, RequireFields<QueryPostArgs, 'id'>>;
+  userMessages?: Resolver<Array<Maybe<ResolversTypes['UserMessage']>>, ParentType, ContextType>;
+};
+
+export type UserMessageResolvers<ContextType = GraphQLContext, ParentType extends ResolversParentTypes['UserMessage'] = ResolversParentTypes['UserMessage']> = {
+  email?: Resolver<ResolversTypes['String'], ParentType, ContextType>;
+  id?: Resolver<ResolversTypes['ID'], ParentType, ContextType>;
+  message?: Resolver<ResolversTypes['String'], ParentType, ContextType>;
+  name?: Resolver<ResolversTypes['String'], ParentType, ContextType>;
+  __isTypeOf?: IsTypeOfResolverFn<ParentType, ContextType>;
 };
 
 export type Resolvers<ContextType = GraphQLContext> = {
   Mutation?: MutationResolvers<ContextType>;
-  Post?: PostResolvers<ContextType>;
   Query?: QueryResolvers<ContextType>;
+  UserMessage?: UserMessageResolvers<ContextType>;
 };
 
+
+export const UserMessageFragmentDoc = gql`
+    fragment UserMessage on UserMessage {
+  email
+  name
+  id
+  message
+}
+    `;
+export const AddUserMessageDocument = gql`
+    mutation AddUserMessage($input: UserMessageInput!) {
+  addUserMessage(input: $input) {
+    ...UserMessage
+  }
+}
+    ${UserMessageFragmentDoc}`;
+export type AddUserMessageMutationFn = Apollo.MutationFunction<AddUserMessageMutation, AddUserMessageMutationVariables>;
+
+/**
+ * __useAddUserMessageMutation__
+ *
+ * To run a mutation, you first call `useAddUserMessageMutation` within a React component and pass it any options that fit your needs.
+ * When your component renders, `useAddUserMessageMutation` returns a tuple that includes:
+ * - A mutate function that you can call at any time to execute the mutation
+ * - An object with fields that represent the current status of the mutation's execution
+ *
+ * @param baseOptions options that will be passed into the mutation, supported options are listed on: https://www.apollographql.com/docs/react/api/react-hooks/#options-2;
+ *
+ * @example
+ * const [addUserMessageMutation, { data, loading, error }] = useAddUserMessageMutation({
+ *   variables: {
+ *      input: // value for 'input'
+ *   },
+ * });
+ */
+export function useAddUserMessageMutation(baseOptions?: Apollo.MutationHookOptions<AddUserMessageMutation, AddUserMessageMutationVariables>) {
+        const options = {...defaultOptions, ...baseOptions}
+        return Apollo.useMutation<AddUserMessageMutation, AddUserMessageMutationVariables>(AddUserMessageDocument, options);
+      }
+export type AddUserMessageMutationHookResult = ReturnType<typeof useAddUserMessageMutation>;
+export type AddUserMessageMutationResult = Apollo.MutationResult<AddUserMessageMutation>;
+export type AddUserMessageMutationOptions = Apollo.BaseMutationOptions<AddUserMessageMutation, AddUserMessageMutationVariables>;
+export const UserMessagesDocument = gql`
+    query UserMessages {
+  userMessages {
+    ...UserMessage
+  }
+}
+    ${UserMessageFragmentDoc}`;
+
+/**
+ * __useUserMessagesQuery__
+ *
+ * To run a query within a React component, call `useUserMessagesQuery` and pass it any options that fit your needs.
+ * When your component renders, `useUserMessagesQuery` returns an object from Apollo Client that contains loading, error, and data properties
+ * you can use to render your UI.
+ *
+ * @param baseOptions options that will be passed into the query, supported options are listed on: https://www.apollographql.com/docs/react/api/react-hooks/#options;
+ *
+ * @example
+ * const { data, loading, error } = useUserMessagesQuery({
+ *   variables: {
+ *   },
+ * });
+ */
+export function useUserMessagesQuery(baseOptions?: Apollo.QueryHookOptions<UserMessagesQuery, UserMessagesQueryVariables>) {
+        const options = {...defaultOptions, ...baseOptions}
+        return Apollo.useQuery<UserMessagesQuery, UserMessagesQueryVariables>(UserMessagesDocument, options);
+      }
+export function useUserMessagesLazyQuery(baseOptions?: Apollo.LazyQueryHookOptions<UserMessagesQuery, UserMessagesQueryVariables>) {
+          const options = {...defaultOptions, ...baseOptions}
+          return Apollo.useLazyQuery<UserMessagesQuery, UserMessagesQueryVariables>(UserMessagesDocument, options);
+        }
+export type UserMessagesQueryHookResult = ReturnType<typeof useUserMessagesQuery>;
+export type UserMessagesLazyQueryHookResult = ReturnType<typeof useUserMessagesLazyQuery>;
+export type UserMessagesQueryResult = Apollo.QueryResult<UserMessagesQuery, UserMessagesQueryVariables>;
+export type AddUserMessageMutationVariables = Exact<{
+  input: UserMessageInput;
+}>;
+
+
+export type AddUserMessageMutation = { __typename?: 'Mutation', addUserMessage: { __typename?: 'UserMessage', email: string, name: string, id: string, message: string } };
+
+export type UserMessageFragment = { __typename?: 'UserMessage', email: string, name: string, id: string, message: string };
+
+export type UserMessagesQueryVariables = Exact<{ [key: string]: never; }>;
+
+
+export type UserMessagesQuery = { __typename?: 'Query', userMessages: Array<{ __typename?: 'UserMessage', email: string, name: string, id: string, message: string } | null> };

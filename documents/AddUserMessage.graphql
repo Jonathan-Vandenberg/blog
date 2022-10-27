@@ -1,0 +1,7 @@
+# import UserMessage from './UserMessageFragment.graphql'
+
+mutation AddUserMessage($input: UserMessageInput!) {
+  addUserMessage(input: $input) {
+    ...UserMessage
+  }
+}

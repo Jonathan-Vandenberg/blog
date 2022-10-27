@@ -1,6 +1,3 @@
-// This is your Prisma schema file,
-// learn more about it in the docs: https://pris.ly/d/prisma-schema
-
 generator client {
   provider = "prisma-client-js"
 }
@@ -10,6 +7,9 @@ datasource db {
   url      = env("MONGODB_URI")
 }
 
-model Post {
-  id String @id @default(auto()) @map("_id") @db.ObjectId
+model UserMessage {
+  id      String @id @default(auto()) @map("_id") @db.ObjectId
+  email   String
+  name    String
+  message String
 }

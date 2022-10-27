@@ -1,15 +1,21 @@
 type Query {
-  post(id: ID!): Post
+  userMessages: [UserMessage]!
 }
 
 type Mutation {
-  addPost(input: PostInput!): Post
+  addUserMessage(input: UserMessageInput!): UserMessage!
 }
 
-type Post {
+type UserMessage {
   id: ID!
+  email: String!
+  name: String!
+  message: String!
 }
 
-input PostInput {
+input UserMessageInput {
   id: ID!
+  email: String!
+  name: String!
+  message: String!
 }

@@ -2,6 +2,7 @@ import TechStack from "../components/TechStack";
 import Button from "../components/Button";
 import Hero from "../components/Hero";
 import Profile from "../components/Profile";
+import UserMessage from "../components/UserMessage";
 
 export default function App() {
   return (
@@ -32,37 +33,11 @@ export default function App() {
                   <path d="M2.003 5.884L10 9.882l7.997-3.998A2 2 0 0016 4H4a2 2 0 00-1.997 1.884z"></path>
                   <path d="M18 8.118l-8 4-8-4V14a2 2 0 002 2h12a2 2 0 002-2V8.118z"></path>
                 </svg>
-                <span>jonvdberg8@gmail.com</span>
+                <a href="mailto:jonvdberg8@gmail.com">Send an Email</a>
               </p>
             </div>
           </div>
-          <form
-            novalidate=""
-            className="flex flex-col py-6 space-y-6 md:py-0 md:px-6 ng-untouched ng-pristine ng-valid"
-          >
-            <label className="block">
-              <span className="mb-1">Full name</span>
-              <input
-                type="text"
-                className="block w-full rounded-md shadow-sm focus:ring focus:ring-opacity-75 p-3 m-1 ring-1 ring-slate-400"
-              />
-            </label>
-            <label className="block">
-              <span className="mb-1">Email address</span>
-              <input
-                type="email"
-                className="block p-3 m-1 w-full rounded-md shadow-sm focus:ring focus:ring-opacity-75 ring-1 ring-slate-400"
-              />
-            </label>
-            <label className="block">
-              <span className="mb-1">Message</span>
-              <textarea
-                rows="3"
-                className="block w-full rounded-md focus:ring focus:ring-opacity-75 ring-1 ring-slate-400 p-3 m-1"
-              ></textarea>
-            </label>
-            <Button content="Leave A Message..." />
-          </form>
+          <UserMessage />
         </div>
       </section>
     </>

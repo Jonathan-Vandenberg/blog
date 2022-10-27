@@ -1,0 +1,6 @@
+fragment UserMessage on UserMessage {
+  email
+  name
+  id
+  message
+}

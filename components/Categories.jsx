@@ -11,9 +11,6 @@ import Link from "next/link";
 export default function App() {
   return (
     <div className="container mx-auto">
-      {/* <div className="underline text-2xl text-gray-700 mt-20 mb-6">
-        Categories
-      </div> */}
       <section className="mb-16 text-gray-800">
         <div className="grid lg:grid-cols-3 gap-6">
           <Link href={"/self-development"}>

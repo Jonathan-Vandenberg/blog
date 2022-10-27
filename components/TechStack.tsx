@@ -16,14 +16,14 @@ export default function App() {
           <div className="max-w-[170px] mx-10 my-6  md:mx-12 lg:m-0">
             <Image width={414} height={248} alt="Next.js Logo" src={nextLogo} />
           </div>
-          <div className="max-w-[190px] lg:pb-9 mx-10 my-6 md:mx-12 lg:m-0 flex items-center">
-            <Image src={tailwindLogo} alt="Tailwind Logo" />
+          <div className="max-w-[180px] mx-10 my-6 md:mx-12 lg:m-0 flex items-center lg:pb-6">
+            <Image alt="GraphCMS Logo" src={graphcms} />
           </div>
           <div className="max-w-[80px] mx-10 my-6 md:mx-12 lg:m-0 flex items-center lg:pb-6">
             <Image alt="Typescript Logo" src={tsLogo} />
           </div>
-          <div className="max-w-[180px] mx-10 my-6 md:mx-12 lg:m-0 flex items-center lg:pb-6">
-            <Image alt="GraphCMS Logo" src={graphcms} />
+          <div className="max-w-[190px] lg:pb-9 mx-10 my-6 md:mx-12 lg:m-0 flex items-center">
+            <Image src={tailwindLogo} alt="Tailwind Logo" />
           </div>
         </div>
       </div>
