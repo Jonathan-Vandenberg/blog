@@ -20,8 +20,8 @@ const typeDefs = readFileSync(join(process.cwd(), "schema.graphql"), {
 
 const resolvers: Resolvers = {
   Query: {
-    userMessages: async (_, __, { prisma }) => {
-      const messages = await prisma.userMessage.findMany();
+    userMessages: (_, __, { prisma }) => {
+      const messages = prisma.userMessage.findMany();
       return messages;
     },
   },
