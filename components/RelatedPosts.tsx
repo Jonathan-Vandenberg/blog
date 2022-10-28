@@ -35,9 +35,9 @@ export default function RelatedPost({
                 <article key={index} className="flex flex-col">
                   {post?.coverImage?.url && (
                     <Link href={`/post/${post.slug}`}>
-                      <a aria-label="Te nulla oportere reprimique his dolorum">
+                      <a aria-label={post.title}>
                         <img
-                          alt=""
+                          alt={post.title}
                           className="object-cover w-full h-52 dark:bg-gray-500"
                           src={post.coverImage.url}
                         />
@@ -60,7 +60,6 @@ export default function RelatedPost({
                       <span className="align-middle">
                         {moment(post.createdAt).format("MMM DD, YYYY")}
                       </span>
-                      <span>2.1K views</span>
                     </div>
                   </div>
                 </article>

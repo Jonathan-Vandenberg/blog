@@ -8,10 +8,7 @@ export default function App() {
       <div className="py-12">
         <Hero />
       </div>
-      {}
       <TechStack />
-      {}
-      <div className=""></div>
       <Profile />
     </>
   );

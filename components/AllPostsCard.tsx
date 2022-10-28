@@ -3,11 +3,7 @@ import Link from "next/link";
 
 export default function App({ post }: any) {
   return (
-    <a
-      rel="noopener noreferrer"
-      href="#"
-      className="max-w-sm mx-auto bg-sky-50 group hover:no-underline focus:no-underline"
-    >
+    <div className="max-w-sm mx-auto bg-sky-50 group hover:no-underline focus:no-underline">
       {post?.coverImage?.url && (
         <Link href={`/post/${post.slug}`}>
           <a area-label="post cover image">
@@ -15,7 +11,7 @@ export default function App({ post }: any) {
               role="presentation"
               className="object-cover w-full rounded h-44"
               src={post.coverImage.url}
-              alt={post.title}
+              alt={`Cover-image: ${post.title}`}
             />
           </a>
         </Link>
@@ -34,6 +30,6 @@ export default function App({ post }: any) {
         </span>
         <p className="text-black">{post.excerpt}</p>
       </div>
-    </a>
+    </div>
   );
 }

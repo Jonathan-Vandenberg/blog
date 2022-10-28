@@ -9,7 +9,7 @@ export default function App() {
   return (
     <section className="bg-gray-100 text-700">
       <div className="container p-6 mx-auto space-y-6 text-center lg:p-8 lg:space-y-8">
-        <h2 className="text-3xl font-bold underline underline-offset-4 text-gray-700">
+        <h2 className="text-2xl font-bold underline underline-offset-4 text-gray-700">
           Tech Stack for this Website
         </h2>
         <div className="flex flex-wrap justify-center lg:justify-between py-2">

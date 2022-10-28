@@ -25,12 +25,12 @@ export default function App({
     switch (categoryName) {
       case "Self Development":
         setStyle(
-          "p-5 mx-auto sm:p-10 bg-gradient-to-tr from-sky-500 via-sky-300 to-sky-500"
+          "p-5 mx-auto sm:p-10 bg-gradient-to-tr from-sky-200 via-sky-50 to-sky-200"
         );
         break;
       case "Health":
         setStyle(
-          "p-5 mx-auto sm:p-10 bg-gradient-to-l from-red-500 via-red-300 to-red-500"
+          "p-5 mx-auto sm:p-10 bg-gradient-to-l from-red-200 via-red-50 to-red-200"
         );
         break;
       case "Travel":
