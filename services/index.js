@@ -146,7 +146,10 @@ export const getPostDetails = async (slug) => {
 export const getSimilarPosts = async (category, slug) => {
   const query = gql`
     query MyQuery($category: Category!, $slug: String!) {
-      posts(where: { category: $category, AND: { slug_not: $slug } }) {
+      posts(
+        where: { category: $category, AND: { slug_not: $slug } }
+        orderBy: createdAt_DESC
+      ) {
         category
         excerpt
         slug
