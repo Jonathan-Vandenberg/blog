@@ -23,7 +23,7 @@ export default function RelatedPost({
   return (
     <>
       {dataLoaded && (
-        <section className="sm:py-12">
+        <section className="py-2">
           <div className="container p-6 mx-auto space-y-8">
             <div className="space-y-2 text-center">
               <h2 className="text-3xl font-bold text-gray-700">
