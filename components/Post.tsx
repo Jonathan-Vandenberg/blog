@@ -22,7 +22,7 @@ export default function App({ content, post }: any) {
             target="_blank"
             className="underline text-black px-2"
           >
-            <span itemProp="name">{post.author.name}</span>
+            <p>{post.author.name}</p>
           </a>
           <span className="align-middle">
             {moment(post.createdAt).format("MMM DD, YYYY")}
@@ -32,18 +32,20 @@ export default function App({ content, post }: any) {
       <div className="text-gray-500">{content}</div>
       <div className="py-8 border-y dark:border-gray-700">
         <div className="flex flex-col space-y-4 md:space-y-0 md:space-x-6 md:flex-row">
-          <div className="self-center block flex-shrink-0 w-24 h-24 border rounded-full md:justify-self-start bg-gray-500 border-gray-700">
-            <Image
-              src={post.author.picture.url}
-              layout="responsive"
-              alt={"Author's image"}
-              width={100}
-              height={100}
-              className="rounded-full"
-            />
-          </div>
+          {post?.author?.picture?.url && (
+            <div className="self-center block flex-shrink-0 w-24 h-24 border rounded-full md:justify-self-start bg-gray-500 border-gray-700">
+              <Image
+                src={post.author.picture.url}
+                layout="responsive"
+                alt={"Author's image"}
+                width={100}
+                height={100}
+                className="rounded-full"
+              />
+            </div>
+          )}
           <div className="flex flex-col">
-            <h4 className="text-lg font-semibold">{post.author.name}</h4>
+            <p className="text-lg font-semibold">{post.author.name}</p>
             <p className="text-gray-500">{post.author.biography}</p>
           </div>
         </div>

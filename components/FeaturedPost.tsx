@@ -29,9 +29,9 @@ export default function App() {
             )}
             <div className="p-6 space-y-2 lg:col-span-5">
               <p className="text-gray-500 ">#{post.category}</p>
-              <h3 className="text-2xl font-semibold sm:text-4xl text-gray-700 group-hover:underline group-focus:underline">
+              <h2 className="text-2xl font-semibold sm:text-4xl text-gray-700 group-hover:underline group-focus:underline">
                 {post.title}
-              </h3>
+              </h2>
               <span className="align-middle text-gray-700">
                 {moment(post.createdAt).format("MMM DD, YYYY")}
               </span>
