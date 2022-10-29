@@ -19,7 +19,7 @@ export default function Index({ posts }: any) {
   return (
     <>
       <Head>
-        <title>Alternatively a better option</title>
+        <title>Alternatively, a better option</title>
         <meta name="viewport" content="initial-scale=1.0, width=device-width" />
         <meta
           name="description"
