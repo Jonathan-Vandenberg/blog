@@ -20,13 +20,11 @@ export default function App() {
             area-label={post.title}
             className="block max-w-sm gap-3 mx-auto sm:max-w-full group hover:no-underline focus:no-underline lg:grid lg:grid-cols-12"
           >
-            {post?.coverImage?.url && (
-              <img
-                src={post.coverImage.url}
-                alt={`featured post image: ${post.title}`}
-                className="object-cover w-full h-64 rounded sm:h-96 lg:col-span-7"
-              />
-            )}
+            <img
+              src={post.coverImage.url}
+              alt={`featured post image: ${post.title}`}
+              className="object-cover w-full h-64 rounded sm:h-96 lg:col-span-7"
+            />
             <div className="p-6 space-y-2 lg:col-span-5">
               <p className="text-gray-500 ">#{post.category}</p>
               <h2 className="text-2xl font-semibold sm:text-4xl text-gray-700 group-hover:underline group-focus:underline">

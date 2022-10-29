@@ -14,7 +14,7 @@ export default function App({ content, post }: any) {
         <h1 className="text-4xl font-bold leading-tight md:text-5xl">
           {post.title}
         </h1>
-        <p className="text-sm text-gray-600 mt-2">
+        <div className="text-sm text-gray-600 mt-2 flex items-center justify-center">
           by
           <a
             rel="noopener noreferrer"
@@ -27,7 +27,7 @@ export default function App({ content, post }: any) {
           <span className="align-middle">
             {moment(post.createdAt).format("MMM DD, YYYY")}
           </span>
-        </p>
+        </div>
       </div>
       <div className="text-gray-500">{content}</div>
       <div className="py-8 border-y dark:border-gray-700">
